@@ -1,0 +1,40 @@
+
+.button-control-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  button {
+    margin: 10px;
+
+    .icon-border {
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    .icon-margin {
+      margin-right: 5px;
+    }
+  }
+}
+
+.search-container {
+  .form-search {
+    margin: 0 50px 0 auto;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+
+    .search-full-width {
+      width: 100%;
+
+      input {
+        width: 95%;
+      }
+    }
+  }
+}
+
+.tabs-container {
+  margin: 20px 50px;
+}

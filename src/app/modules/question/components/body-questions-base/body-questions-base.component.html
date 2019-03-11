@@ -1,0 +1,47 @@
+
+<app-head></app-head>
+<div class="button-control-container">
+
+  <button mat-button routeL routerLink="./add">
+    <i class="material-icons icon-border">add</i>
+    Добавить
+  </button>
+
+  <button mat-button>
+    <i class="material-icons icon-margin">delete</i>
+    Удалить
+  </button>
+
+  <button mat-button>
+    <i class="material-icons icon-margin">archive</i>
+    Архив
+  </button>
+
+  <button mat-button>
+    <i class="material-icons icon-margin">local_offer</i>
+    Спарвочник тегов
+  </button>
+
+</div>
+
+<div class="search-container">
+    <form class="form-search">
+        <mat-form-field class="search-full-width">
+          <input matInput type="search" placeholder="Поиск по вопросу" value="" />
+          <i class="material-icons icon-search">search</i>
+        </mat-form-field>
+    </form>
+</div>
+
+<div class="tabs-container">
+    <mat-tab-group animationDuration="0ms">
+
+      <mat-tab label="Тестовые вопросы">
+          <app-table-test-questions></app-table-test-questions>
+      </mat-tab>
+
+      <mat-tab label="Тестовые задания">Тестовые задания</mat-tab>
+      <mat-tab label="Кодовые задания">Кодовые задания</mat-tab>
+    </mat-tab-group>
+</div>
+

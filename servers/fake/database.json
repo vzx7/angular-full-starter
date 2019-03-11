@@ -1,0 +1,1808 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "firstName": "1",
+      "lastName": "1",
+      "patronymic": "1",
+      "email": "admin@gmail.com",
+      "login": "test",
+      "password": "5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5"
+    },
+    {
+      "id": "1",
+      "firstName": "Мария",
+      "lastName": "Жданов",
+      "patronymic": "Игоревна",
+      "email": "panova@gmail.com",
+      "password": "C2E041DCBAC9FF1F1416E224E9A144DC704A83667BE2F775A1CA24FB85DEBCDF",
+      "login": "tuturu"
+    },
+    {
+      "id": "2",
+      "firstName": "Дмитрий",
+      "lastName": "Денисова",
+      "patronymic": "Ильина",
+      "email": "_@yandex.ru",
+      "password": "cdf777dad58421038d44c9f0c2f430cdeded3275ad2aab1e0458c44eae2f07d2",
+      "login": "sed"
+    },
+    {
+      "id": "3",
+      "firstName": "Олег",
+      "lastName": "Рогов",
+      "patronymic": "Воробьева",
+      "email": "30@mail.ru",
+      "password": "76b99780d38b29166b8bd8bafc0ca7e34c64e233e5076799851ca2c70aa8022f",
+      "login": "quos"
+    },
+    {
+      "id": "4",
+      "firstName": "Ярослав",
+      "lastName": "Жуков",
+      "patronymic": "Петухова",
+      "email": ".52@gmail.com",
+      "password": "78be9ff233d5ce19399839976bf02d188f3ce02cddea38a5d6f63d8687e97340",
+      "login": "dolores"
+    },
+    {
+      "id": "5",
+      "firstName": "Зоя",
+      "lastName": "Титов",
+      "patronymic": "Ситникова",
+      "email": ".@gmail.com",
+      "password": "095fc8f88d1bc58aa226559d94b945c7bf963de4d5ac53ad564fa6089f15aca9",
+      "login": "omnis"
+    },
+    {
+      "id": "6",
+      "firstName": "Лаврентий",
+      "lastName": "Горшкова",
+      "patronymic": "Андреев",
+      "email": "67@ya.ru",
+      "password": "8ea1794883292d13b3a350ca5a66558cf1a694f5314cbf663770ef0f487ee328",
+      "login": "nihil"
+    },
+    {
+      "id": "7",
+      "firstName": "Юлия",
+      "lastName": "Лазарева",
+      "patronymic": "Козлов",
+      "email": ".80@hotmail.com",
+      "password": "12218c3fcab7feea86815acdf33fe2ea593391a6746d88118947650e9e346318",
+      "login": "veniam"
+    },
+    {
+      "id": "8",
+      "firstName": "Зинаида",
+      "lastName": "Гурьев",
+      "patronymic": "Кошелев",
+      "email": "_@hotmail.com",
+      "password": "fb4d20911c60413222ea219413bf0ac3dea94d8842f60224bb7b811eb0e418a8",
+      "login": "expedita"
+    },
+    {
+      "id": "9",
+      "firstName": "Маргарита",
+      "lastName": "Кулагин",
+      "patronymic": "Пахомова",
+      "email": "_13@hotmail.com",
+      "password": "59c6c344f669d91a73d787c502b58d458ef101d5ff1a9fe8f57a3ee5ec33fe3a",
+      "login": "ipsam"
+    },
+    {
+      "id": "10",
+      "firstName": "Леонид",
+      "lastName": "Ларионов",
+      "patronymic": "Ершов",
+      "email": "43@yandex.ru",
+      "password": "34bcc0cfa6df03ff48bd878454fba2fc53525a997bb196f3b6aa84a5e973f4cc",
+      "login": "quia"
+    }
+  ],
+  "dictionary_tree": [
+    {
+      "id": "1",
+      "name": {
+        "value": "cupiditate",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": null,
+      "hasChildren": true
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "voluptas",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "amet",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "voluptatum",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "vel",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "autem",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "hic",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "harum",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "officia",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "11",
+      "name": {
+        "value": "iste",
+        "lang": "ru"
+      },
+      "isSystem": false,
+      "parentId": "1",
+      "hasChildren": false
+    },
+    {
+      "id": "12",
+      "name": {
+        "value": "facere",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": null,
+      "hasChildren": true
+    },
+    {
+      "id": "13",
+      "name": {
+        "value": "sed",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "14",
+      "name": {
+        "value": "aliquam",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "15",
+      "name": {
+        "value": "velit",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "16",
+      "name": {
+        "value": "quam",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "17",
+      "name": {
+        "value": "accusantium",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "18",
+      "name": {
+        "value": "in",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "19",
+      "name": {
+        "value": "est",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    },
+    {
+      "id": "20",
+      "name": {
+        "value": "quo",
+        "lang": "ru"
+      },
+      "isSystem": true,
+      "parentId": "12",
+      "hasChildren": false
+    }
+  ],
+  "dictionary_system_table": [
+    {
+      "id": "1",
+      "name": {
+        "value": "consequuntur",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "cupiditate",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "dolor",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "quo",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "minima",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "est",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "expedita",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "iste",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "iste",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "consequatur",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "11",
+      "name": {
+        "value": "ratione",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "12",
+      "name": {
+        "value": "asperiores",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "13",
+      "name": {
+        "value": "laborum",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "14",
+      "name": {
+        "value": "voluptatem",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "15",
+      "name": {
+        "value": "necessitatibus",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "16",
+      "name": {
+        "value": "molestiae",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "17",
+      "name": {
+        "value": "nostrum",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "18",
+      "name": {
+        "value": "dolorem",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "19",
+      "name": {
+        "value": "ipsum",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "20",
+      "name": {
+        "value": "rerum",
+        "lang": "ru"
+      }
+    }
+  ],
+  "dictionary_user_table": [
+    {
+      "id": "1",
+      "name": {
+        "value": "necessitatibus",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "vitae",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "odit",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "ipsa",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "minus",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "accusantium",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "eveniet",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "accusantium",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "velit",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "laboriosam",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "11",
+      "name": {
+        "value": "aut",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "12",
+      "name": {
+        "value": "est",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "13",
+      "name": {
+        "value": "sunt",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "14",
+      "name": {
+        "value": "a",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "15",
+      "name": {
+        "value": "aut",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "16",
+      "name": {
+        "value": "pariatur",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "17",
+      "name": {
+        "value": "totam",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "18",
+      "name": {
+        "value": "perferendis",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "19",
+      "name": {
+        "value": "aliquid",
+        "lang": "ru"
+      }
+    },
+    {
+      "id": "20",
+      "name": {
+        "value": "aut",
+        "lang": "ru"
+      }
+    }
+  ],
+  "classifier_subgroup_substance": [
+    {
+      "id": "0",
+      "name": "Разложение в аэробных условиях",
+      "type": "indicator",
+      "parentId": null,
+      "hasChildren": true
+    },
+    {
+      "id": "1",
+      "name": "sed",
+      "type": "subgroup",
+      "parentId": "0",
+      "hasChildren": false
+    },
+    {
+      "id": "2",
+      "name": "est",
+      "type": "indicator",
+      "parentId": "0",
+      "hasChildren": false
+    },
+    {
+      "id": "3",
+      "name": "Биоразлагаемость",
+      "type": "indicator",
+      "parentId": null,
+      "hasChildren": false
+    },
+    {
+      "id": "4",
+      "name": "Биоаккумуляция",
+      "type": "subgroup",
+      "parentId": null,
+      "hasChildren": false
+    },
+    {
+      "id": "1",
+      "name": {
+        "value": "ad",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "alias",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "deserunt",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "fuga",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "quia",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "molestiae",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "ea",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "reiciendis",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "incidunt",
+        "lang": "ru"
+      },
+      "parentId": null
+    }
+  ],
+  "classifier_table_product": [],
+  "classifier_table_nei": [],
+  "group_substance": [
+    {
+      "id": "1",
+      "name": {
+        "value": "delectus",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "officiis",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "consequuntur",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "ab",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "soluta",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "ad",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "hic",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "fugit",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "ipsa",
+        "lang": "ru"
+      },
+      "parentId": null
+    }
+  ],
+  "subgroup_substance": [
+    {
+      "id": "1",
+      "name": {
+        "value": "vel",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "sunt",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "accusamus",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "qui",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "doloremque",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "voluptates",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "quo",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "occaecati",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "dolorem",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "alias",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    }
+  ],
+  "indicator_substance": [
+    {
+      "id": "1",
+      "name": {
+        "value": "aperiam",
+        "lang": "ru"
+      },
+      "parentId": null
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "saepe",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "sequi",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "soluta",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "beatae",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "alias",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "est",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "ut",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "reiciendis",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "eos",
+        "lang": "ru"
+      },
+      "parentId": "1"
+    }
+  ],
+  "attr_table": [
+    {
+      "id": "1",
+      "name": {
+        "value": "velit",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ut"
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "labore",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ut"
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "facilis"
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "nihil",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "consectetur"
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "nesciunt",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "eos"
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "aut",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ut"
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "voluptas",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "molestias"
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "officia",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "non"
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "recusandae",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "et"
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "sed",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "sint"
+    },
+    {
+      "id": "11",
+      "name": {
+        "value": "aliquid",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "architecto"
+    },
+    {
+      "id": "12",
+      "name": {
+        "value": "non",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "officiis"
+    },
+    {
+      "id": "13",
+      "name": {
+        "value": "assumenda",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "aut"
+    },
+    {
+      "id": "14",
+      "name": {
+        "value": "laborum",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "consectetur"
+    },
+    {
+      "id": "15",
+      "name": {
+        "value": "tempora",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "mollitia"
+    },
+    {
+      "id": "16",
+      "name": {
+        "value": "rerum",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "omnis"
+    },
+    {
+      "id": "17",
+      "name": {
+        "value": "eum",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "alias"
+    },
+    {
+      "id": "18",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "minima"
+    },
+    {
+      "id": "19",
+      "name": {
+        "value": "vitae",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ea"
+    },
+    {
+      "id": "20",
+      "name": {
+        "value": "delectus",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "optio"
+    },
+    {
+      "id": "21",
+      "name": {
+        "value": "ut",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "reprehenderit"
+    },
+    {
+      "id": "22",
+      "name": {
+        "value": "hic",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "qui"
+    },
+    {
+      "id": "23",
+      "name": {
+        "value": "sunt",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "repellendus"
+    },
+    {
+      "id": "24",
+      "name": {
+        "value": "tempora",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "quaerat"
+    },
+    {
+      "id": "25",
+      "name": {
+        "value": "incidunt",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "rem"
+    },
+    {
+      "id": "26",
+      "name": {
+        "value": "enim",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ut"
+    },
+    {
+      "id": "27",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "assumenda"
+    },
+    {
+      "id": "28",
+      "name": {
+        "value": "qui",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "soluta"
+    },
+    {
+      "id": "29",
+      "name": {
+        "value": "cum",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "dolore"
+    },
+    {
+      "id": "30",
+      "name": {
+        "value": "quidem",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "voluptates"
+    },
+    {
+      "id": "31",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "adipisci"
+    },
+    {
+      "id": "32",
+      "name": {
+        "value": "voluptates",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ut"
+    },
+    {
+      "id": "33",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "sit"
+    },
+    {
+      "id": "34",
+      "name": {
+        "value": "dignissimos",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "autem"
+    },
+    {
+      "id": "35",
+      "name": {
+        "value": "repellat",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "amet"
+    },
+    {
+      "id": "36",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "est"
+    },
+    {
+      "id": "37",
+      "name": {
+        "value": "cumque",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ea"
+    },
+    {
+      "id": "38",
+      "name": {
+        "value": "beatae",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "pariatur"
+    },
+    {
+      "id": "39",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "explicabo"
+    },
+    {
+      "id": "40",
+      "name": {
+        "value": "rerum",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "placeat"
+    },
+    {
+      "id": "41",
+      "name": {
+        "value": "tenetur",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "voluptatem"
+    },
+    {
+      "id": "42",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "quia"
+    },
+    {
+      "id": "43",
+      "name": {
+        "value": "omnis",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "non"
+    },
+    {
+      "id": "44",
+      "name": {
+        "value": "mollitia",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "rem"
+    },
+    {
+      "id": "45",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "suscipit"
+    },
+    {
+      "id": "46",
+      "name": {
+        "value": "exercitationem",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "eos"
+    },
+    {
+      "id": "47",
+      "name": {
+        "value": "ipsa",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "laudantium"
+    },
+    {
+      "id": "48",
+      "name": {
+        "value": "error",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "ipsa"
+    },
+    {
+      "id": "49",
+      "name": {
+        "value": "voluptatibus",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "porro"
+    },
+    {
+      "id": "50",
+      "name": {
+        "value": "sint",
+        "lang": "ru"
+      },
+      "type": "текст",
+      "dictionary": "est"
+    }
+  ],
+  "structure_table": [
+    {
+      "id": "1",
+      "name": {
+        "value": "velit",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "2",
+      "name": {
+        "value": "quo",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "3",
+      "name": {
+        "value": "quis",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "4",
+      "name": {
+        "value": "odio",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "5",
+      "name": {
+        "value": "maiores",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "6",
+      "name": {
+        "value": "voluptatibus",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "7",
+      "name": {
+        "value": "quos",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "8",
+      "name": {
+        "value": "modi",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "9",
+      "name": {
+        "value": "accusantium",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "10",
+      "name": {
+        "value": "autem",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "11",
+      "name": {
+        "value": "ut",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "12",
+      "name": {
+        "value": "corrupti",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "13",
+      "name": {
+        "value": "qui",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "14",
+      "name": {
+        "value": "ipsum",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "15",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "16",
+      "name": {
+        "value": "excepturi",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "17",
+      "name": {
+        "value": "nostrum",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "18",
+      "name": {
+        "value": "asperiores",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "19",
+      "name": {
+        "value": "culpa",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "20",
+      "name": {
+        "value": "voluptate",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "21",
+      "name": {
+        "value": "et",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "22",
+      "name": {
+        "value": "distinctio",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "23",
+      "name": {
+        "value": "perspiciatis",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "24",
+      "name": {
+        "value": "at",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "25",
+      "name": {
+        "value": "nostrum",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "26",
+      "name": {
+        "value": "quo",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "27",
+      "name": {
+        "value": "sunt",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "28",
+      "name": {
+        "value": "corporis",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "29",
+      "name": {
+        "value": "earum",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "30",
+      "name": {
+        "value": "temporibus",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "31",
+      "name": {
+        "value": "nam",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "32",
+      "name": {
+        "value": "voluptates",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "33",
+      "name": {
+        "value": "vitae",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "34",
+      "name": {
+        "value": "eum",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "35",
+      "name": {
+        "value": "qui",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "36",
+      "name": {
+        "value": "iusto",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "37",
+      "name": {
+        "value": "qui",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "38",
+      "name": {
+        "value": "eos",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "39",
+      "name": {
+        "value": "consequatur",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "40",
+      "name": {
+        "value": "voluptatem",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "41",
+      "name": {
+        "value": "quibusdam",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "42",
+      "name": {
+        "value": "id",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "43",
+      "name": {
+        "value": "nesciunt",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "44",
+      "name": {
+        "value": "sequi",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "45",
+      "name": {
+        "value": "hic",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "46",
+      "name": {
+        "value": "culpa",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "47",
+      "name": {
+        "value": "aliquid",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "48",
+      "name": {
+        "value": "error",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "49",
+      "name": {
+        "value": "eos",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    },
+    {
+      "id": "50",
+      "name": {
+        "value": "voluptas",
+        "lang": "ru"
+      },
+      "type": "раздел"
+    }
+  ]
+}

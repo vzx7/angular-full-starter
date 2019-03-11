@@ -1,0 +1,57 @@
+<app-head></app-head>
+<div class="container">
+
+  <mat-card class="card-foto">
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba1.jpg" alt="Photo of a Shiba Inu"/>
+    <mat-card-actions class="card-button">
+      <button mat-raised-button color="primary">Сменить фото</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <form class="form-account" [formGroup]="form" (ngSubmit)="onSave()">
+    <mat-form-field class="account-full-width">
+      <input matInput type="text" placeholder="Фамилия" formControlName="lastName" value=""/>
+      <mat-error *ngIf="isError('lastName')">
+        Некорректная фамилия
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="account-full-width">
+      <input matInput type="text" placeholder="Имя" formControlName="firstName" value=""/>
+      <mat-error *ngIf="isError('firstName')">
+        Некорректное имя
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="account-full-width">
+      <input matInput type="text" placeholder="Отчество" formControlName="patronymic" value=""/>
+      <mat-error *ngIf="isError('patronymic')">
+        Некорректное отчество
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="account-full-width">
+      <input matInput type="text" placeholder="Логин" formControlName="login" value=""/>
+      <mat-error *ngIf="isError('login')">
+        Некорректный логин
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="account-full-width">
+      <input matInput type="text" placeholder="E-mail" formControlName="email" value=""/>
+      <mat-error *ngIf="isError('email')">
+        Некорректный email
+      </mat-error>
+    </mat-form-field>
+
+    <mat-card-actions class="button-save">
+      <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+        Сохранить
+      </button>
+    </mat-card-actions>
+
+  </form>
+
+  <app-account-password></app-account-password>
+
+</div>
