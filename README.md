@@ -1,3 +1,3 @@
 ## License
 
-  Nest is [MIT licensed](LICENSE).
+  It is [MIT licensed](LICENSE).
