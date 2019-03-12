@@ -1,5 +1,5 @@
 {
-  "name": "is",
+  "name": "angular-full-starter",
   "version": "0.0.0",
   "scripts": {
     "ci": "npm i && npm run lint && npm run build:prod && npm run test",
@@ -8,12 +8,11 @@
     "build:stat": "npm run build:prod -- --stats-json",
     "test": "ng test --watch=false --code-coverage",
     "lint": "ng lint && stylelint src/**/*.scss && htmlhint src",
-    "install:dev": "npm i && cd servers/fake && npm i",
-    "install:prod": "npm i && cd servers/prod && npm i",
+    "install:api": "npm i && cd api && npm i",
     "prebuild": "ts-node git.version.ts",
-    "server": "cd servers/fake && npm start",
-    "server:prod": "cd servers/prod && npm start",
-    "start:dev": "concurrently --raw \"npm run prebuild\" \"ng s --host 0.0.0.0\" \"npm run server\"",
+    "server:dev": "cd api && npm run start:dev",
+    "server:prod": "cd api && npm run start:prod",
+    "start:dev": "concurrently --raw \"npm run prebuild\" \"ng s --host 0.0.0.0\" \"npm run server:dev\"",
     "start:prod": "npm run server:prod",
     "bundle-report": "webpack-bundle-analyzer dist/is/stats.json",
     "docs": "compodoc -p tsconfig.json -s"
