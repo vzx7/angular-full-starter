@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
+
+import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
-import { AccessToken } from '../models/access-token';
+import { RequestService } from '../../shared/services/request/request.service';
 import { authConfig } from '../auth.config';
+import { AccessToken } from '../models/access-token';
 import { Credential } from '../models/credential';
 import { EmailRecovery } from '../models/email-recovery';
 import { PasswordRecovery } from '../models/password-recovery';
-import { RequestService } from '../../shared/services/request/request.service';
 import { User } from '../models/user';
 
 /**

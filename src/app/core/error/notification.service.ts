@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { publish, refCount } from 'rxjs/operators';
+
+import { Injectable } from '@angular/core';
 
 /**
  * Сервис нотификаций

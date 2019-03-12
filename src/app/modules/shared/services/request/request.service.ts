@@ -1,10 +1,11 @@
+import { Observable } from 'rxjs';
+import { finalize, map } from 'rxjs/operators';
+
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { finalize, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
-import { appConfig } from '../../../../app.configs';
 import { environment } from '../../../../../environments/environment';
+import { appConfig } from '../../../../app.configs';
 
 /**
  * Сервис обработки запросов

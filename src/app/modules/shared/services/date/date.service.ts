@@ -1,7 +1,9 @@
+import 'moment/locale/ru';
+
+import * as moment from 'moment';
+
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import * as moment from 'moment';
-import 'moment/locale/ru';
 
 /**
  * Сервис для работы с датами

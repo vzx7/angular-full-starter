@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { AccountService } from './services/account.service';
+import { HeadModule } from 'modules/shared/modules/head/head.module';
 import { SharedModule } from 'modules/shared/shared.module';
-import { MatSnackBarModule } from '@angular/material';
+
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AccountRoutingModule } from './account-routing.module';
-import { AccountComponent } from './components/account/account.component';
-import { HeadModule } from 'modules/shared/modules/head/head.module';
 import { AccountPasswordComponent } from './components/account-password/account-password.component';
+import { AccountComponent } from './components/account/account.component';
+import { AccountService } from './services/account.service';
 
 @NgModule({
   declarations: [

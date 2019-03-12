@@ -1,12 +1,13 @@
+import { Password } from 'modules/account/models/password';
+import { User } from 'modules/account/models/user';
+import { FormService } from 'modules/shared/services/form/form.service';
+
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { AccountService } from '../../services/account.service';
-import { FormService } from 'modules/shared/services/form/form.service';
-import { User } from 'modules/account/models/user';
-import { Password } from 'modules/account/models/password';
 
 /**
  * Компонент формы изменения пароля в личном кабинете.

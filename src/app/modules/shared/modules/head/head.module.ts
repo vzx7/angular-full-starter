@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeadComponent } from './components/head/head.component';
+import { NgModule } from '@angular/core';
 import { MatIconModule, MatToolbarModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
+
+import { HeadComponent } from './components/head/head.component';
 
 @NgModule({
   declarations: [

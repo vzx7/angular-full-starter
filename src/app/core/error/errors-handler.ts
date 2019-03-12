@@ -1,5 +1,5 @@
-import { ErrorHandler, Injectable, Injector } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ErrorHandler, Injectable, Injector } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
 import { ToastService } from '../../core/services/toast/toast.service';

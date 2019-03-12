@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { FormService } from './services/form/form.service';
-import { DateService } from './services/date/date.service';
 import { PasswordCheckerComponent } from './components/password-checker/password-checker.component';
-import { RequestService } from './services/request/request.service';
-import { ValidationOnBlurDirective } from './directives/validate-onblur/validate-onblur.directive';
 import { TableRowEditDirective } from './directives/table-row-edit/table-row-edit.directive';
+import { ValidationOnBlurDirective } from './directives/validate-onblur/validate-onblur.directive';
+import { DateService } from './services/date/date.service';
+import { FormService } from './services/form/form.service';
+import { RequestService } from './services/request/request.service';
 
 @NgModule({
   imports: [

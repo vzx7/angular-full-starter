@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { User } from 'modules/account/models/user';
+import { RequestService } from 'modules/shared/services/request/request.service';
 import { Observable } from 'rxjs';
 
-import { RequestService } from 'modules/shared/services/request/request.service';
-import { User } from 'modules/account/models/user';
+import { Injectable } from '@angular/core';
+
 import { accountConfig } from '../account.configs';
 import { Password } from '../models/password';
 

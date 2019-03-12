@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BodyQuestionsBaseComponent } from './components/body-questions-base/body-questions-base.component';
-import { BodyTestQuestionAddComponent } from './components/body-test-question-add/body-test-question-add.component';
 
 import { LoggedGuard } from '../../core/services/guards/logged/logged.guard';
+import {
+    BodyQuestionsBaseComponent
+} from './components/body-questions-base/body-questions-base.component';
+import {
+    BodyTestQuestionAddComponent
+} from './components/body-test-question-add/body-test-question-add.component';
 
 const routes: Routes = [
   {

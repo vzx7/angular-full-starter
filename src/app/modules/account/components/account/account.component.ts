@@ -1,11 +1,12 @@
+import { User } from 'modules/account/models/user';
+import { FormService } from 'modules/shared/services/form/form.service';
+
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
+import { Router } from '@angular/router';
 
 import { AccountService } from '../../services/account.service';
-import { FormService } from 'modules/shared/services/form/form.service';
-import { User } from 'modules/account/models/user';
 
 /**
  * Компонент личного кабинета.

@@ -3,17 +3,17 @@
 **/package-lock.json
 
 # IDE
-/.vscode
+**/.vscode
 
 # misc
-npm-debug.log
-.DS_Store
+**/npm-debug.log
+**/.DS_Store
 
 # tests
-/test
-/coverage
-/.nyc_output
+**/test
+**/coverage
+**/.nyc_output
 
 # source
-dist
+**/dist
 **/versions.ts
