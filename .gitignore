@@ -17,3 +17,6 @@
 # source
 **/dist
 **/versions.ts
+
+#docs
+**/documentation

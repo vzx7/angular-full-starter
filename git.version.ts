@@ -3,8 +3,8 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 /**
- * Создание файла версий
- * @param filename Наименование
+ * create version file
+ * @param filename name
  */
 async function createVersionsFile(filename: string) {
   const revision = (await exec('git rev-parse --short HEAD')).stdout.toString().trim();
@@ -23,4 +23,4 @@ async function createVersionsFile(filename: string) {
   fs.writeFileSync(filename, content, {encoding: 'utf8'});
 }
 
-createVersionsFile('src/environments/versions.ts');
+createVersionsFile('versions.ts');
