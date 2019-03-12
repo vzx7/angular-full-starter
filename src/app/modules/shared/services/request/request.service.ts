@@ -82,7 +82,7 @@ export class RequestService {
    * @return Observable типа
    */
   public getBlobRest<T>(url: string, complete?: Function, querryParams?: string): Observable<T | any> {
-    return this.httpClient.get(environment.fakeHost + url,
+    return this.httpClient.get(environment.host + url,
       { params: new HttpParams({ fromString: querryParams }), headers: this.header, responseType: 'blob' })
       .pipe(map((res: any) => {
         const blob = new Blob([res]);
@@ -128,7 +128,7 @@ export class RequestService {
    * @return хост
    */
   private getHost(isReal: boolean): string {
-    return isReal ? environment.realHost : environment.fakeHost;
+    return isReal ? environment.host : environment.host;
   }
 
 }
