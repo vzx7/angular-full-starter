@@ -1,15 +1,19 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get, UseGuards, Render, Res } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) { }
+  constructor() { }
 
+  /**
+   * Static answer
+   * @param res answer
+   */
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  root(@Res() res) {
+    res.sendFile("index.html");
   }
 
   /**
