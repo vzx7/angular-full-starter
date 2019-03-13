@@ -1,16 +1,20 @@
-import { NestFactory, FastifyAdapter } from '@nestjs/core';
+import { join } from 'path';
+
+import { FastifyAdapter, NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app.module';
-import { join } from 'path';
 import { HttpExceptionFilter } from './filters/http-exception.filter';
+import { ConfigService } from './modules/config/services/config.service';
 
 async function bootstrap() {
+  const config = new ConfigService(`${process.env.NODE_ENV}.env`);
+  const port = config.port;
   const app = await NestFactory.create(AppModule, new FastifyAdapter());
   app.useStaticAssets({
     root: join(__dirname, '..', '..', 'dist', 'client')
   });
   app.useGlobalFilters(new HttpExceptionFilter());
-  await app.listen(3000);
-  console.log('server up on http://localhost:3000/');
+  await app.listen(port);
+  console.log(`server up on http://localhost:${port}/`);
 }
 bootstrap();

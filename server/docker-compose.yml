@@ -2,8 +2,8 @@ version: "3"
 
 services:
   mongodb:
+    env_file:
+      - docker.development.env
     image: mongo:latest
-    environment:
-      - MONGODB_DATABASE="full"
     ports:
       - 27017:27017
