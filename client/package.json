@@ -2,8 +2,7 @@
   "name": "client",
   "version": "0.0.0",
   "scripts": {
-    "ci": "npm i && npm run lint && npm run build:prod && npm run test",
-    "build": "ng build --output-hashing=none",
+    "build": "ng build --output-path=../dist/client",
     "build:prod": "npm run build -- --configuration=production",
     "build:stat": "npm run build:prod -- --stats-json",
     "test": "ng test --watch=false --code-coverage",

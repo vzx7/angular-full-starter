@@ -2,9 +2,7 @@
   "name": "angular-full-starter",
   "version": "0.0.0",
   "scripts": {
-    "build": "ng build --output-hashing=none",
-    "build:prod": "npm run build -- --configuration=production",
-    "build:client-stat": "cd coient && npm run build:prod -- --stats-json",
+    "build:client": "cd client && npm run build:prod",
     "test": "ng test --watch=false --code-coverage",
     "install:server": "cd server && npm i",
     "install:client": "cd client && npm i",
