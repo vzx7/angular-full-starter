@@ -26,9 +26,10 @@
     "@nestjs/mongoose": "^5.2.2",
     "@nestjs/passport": "^5.1.0",
     "@nestjs/websockets": "^5.4.0",
+    "@types/mongoose": "^5.3.21",
+    "mongoose": "^5.4.19",
     "passport": "^0.4.0",
     "passport-http-bearer": "^1.0.1",
-    "mongoose": "^5.4.19",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.3",
     "rxjs": "^6.3.3"
@@ -39,6 +40,7 @@
     "@types/jest": "^23.3.13",
     "@types/node": "^10.12.18",
     "@types/supertest": "^2.0.7",
+    "codelyzer": "^5.0.0-beta.0",
     "compodoc": "0.0.41",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9",
@@ -48,6 +50,8 @@
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.7.0",
     "tslint": "5.12.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-microsoft-contrib": "^6.1.0",
     "typescript": "^3.2.4"
   },
   "jest": {
