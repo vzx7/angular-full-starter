@@ -2,18 +2,21 @@
   "name": "angular-full-starter",
   "version": "0.0.0",
   "scripts": {
-    "build:client": "cd client && npm run build:prod",
+    "build:prod:client": "cd client && npm run build:prod",
+    "build:prod:api-server": "cd servers/api && npm run build",
+    "build": "npm run build:prod:api-server && npm run build:prod:client",
     "test": "ng test --watch=false --code-coverage",
-    "install:server": "cd server && npm i",
+    "install:api-server": "cd servers/api && npm i",
+    "install:prod-server": "cd servers/prod-static && npm i",
     "install:client": "cd client && npm i",
-    "install": "npm run install:server && npm run install:client",
+    "install": "npm run install:api-server && npm run install:prod-server && npm run install:client",
     "prebuild": "ts-node git.version.ts",
-    "server:dev": "cd server && npm run start:dev",
-    "server:prod": "cd server && npm run start:prod",
+    "server:dev": "cd servers/api && npm run start:dev",
+    "server:prod": "cd servers/prod-static && npm start",
     "client:dev": "cd client && npm run start:dev",
     "bundle-report": "cd client && webpack-bundle-analyzer dist/client/stats.json",
-    "docs:client": "cd client && npm run docs .",
-    "docs:server": "cd server && npm run docs"
+    "docs:client": "cd client && npm run docs",
+    "docs:api-server": "cd servers/api && npm run docs"
   },
   "husky": {
     "hooks": {
