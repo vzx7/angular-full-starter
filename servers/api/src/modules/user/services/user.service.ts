@@ -8,9 +8,7 @@ export class UserService {
   constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) {}
 
   async create(userDto: UserDto): Promise<User> {
-    console.log('CATS');
     const createdUser = new this.userModel(userDto);
-    console.log(createdUser);
     return await createdUser.save();
   }
 

@@ -5,15 +5,15 @@ import { UserDto } from './dto/create-user.dto';
 
 @Controller('api/users')
 export class UserController {
-  constructor(private readonly catsService: UserService) {}
+  constructor(private readonly userService: UserService) {}
 
   @Post()
   async create(@Body() userDto: UserDto) {
-    this.catsService.create(userDto);
+    this.userService.create(userDto);
   }
 
   @Get()
   async findAll(): Promise<User[]> {
-    return this.catsService.findAll();
+    return this.userService.findAll();
   }
 }

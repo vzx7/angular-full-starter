@@ -4,6 +4,6 @@ export class UserDto {
   readonly name: string;
   readonly nickname: string;
   readonly email: string;
-  readonly type: UserType;
+  readonly type: number;
   readonly token: string;
 }
