@@ -1,9 +1,11 @@
 import { UserType } from '../enums/user-type.enum';
 
-export class UserDto {
-  readonly name: string;
-  readonly nickname: string;
-  readonly email: string;
-  readonly type: number;
-  readonly token: string;
+export class CreateUserDto {
+  public id: string;
+  public firstName: string;
+  public lastName: string;
+  public email: string;
+  public username: string;
+  public password: string;
+  public createdAt: Date;
 }
