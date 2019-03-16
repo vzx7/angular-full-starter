@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
 
 /**
- * Компонент формы изменения пароля в личном кабинете.
+ * The component of the password change form in the personal account.
  */
 @Component({
   selector: 'app-account-password',
@@ -23,36 +23,36 @@ export class AccountPasswordComponent implements OnInit {
   @ViewChild('ngForm') public ngForm: NgForm;
 
   /**
-   * Форма
+   * Form.
    */
   public form: FormGroup;
 
   /**
-   * Показ загрузки
+   * Displaying the content loading process.
    */
   public isLoading: boolean;
 
   /**
-   * Пользователь
+   * User.
    */
   public user: User;
 
   /**
-   * Проверка на совпадение ввода текущего пароля с паролем пользователя
+   * Check for a match between entering the current password and the user password.
    */
   public isTruePassword: boolean;
 
   /**
-   * Проверка на совпадение ввода нового пароля и повторения нового пароля
+   * Check for a match between entering a new password and repeating a new password.
    */
   public isEqualPasswords: boolean;
 
   /**
-   * Конструктор
-   * @param accountService Сервис для личного кабинета
-   * @param fb Построитель форм
-   * @param formService Маршрутизатор
-   * @param router Маршрутизатор
+   * Constructor
+   * @param accountService accountService
+   * @param fb Form Builder
+   * @param formService Form Service
+   * @param router Router
    * @param snackBar Snack-bar
    */
   constructor(
@@ -64,7 +64,7 @@ export class AccountPasswordComponent implements OnInit {
   ) { }
 
   /**
-   * Хук инициализации компонента
+   * Component initialization hook.
    */
   public ngOnInit() {
     this.initForm();
@@ -72,14 +72,13 @@ export class AccountPasswordComponent implements OnInit {
   }
 
   /**
-   * Сохранение
+   * Password save.
    */
   public onChangePassword() {
-    // Проверка на совпадение ввода текущего пароля с паролем пользователя
      if (this.form.value.password !== this.user.password) {
       this.isTruePassword = false;
      }
-     // Проверка на совпадение нового введенного пароля с повтором нового введенного пароля
+
      if (this.form.value.newPassword !== this.form.value.repeatNewPassword) {
       this.isEqualPasswords = false;
      } else {
@@ -88,7 +87,7 @@ export class AccountPasswordComponent implements OnInit {
           this.isLoading = true;
           this.accountService.changePassword(this.form.value as Password, this.user, () => {}).subscribe(() => {
             this.ngForm.resetForm();
-            this.openSnackBar('Пароль успешно обновлен!', '');
+            this.openSnackBar('Password successfully updated!', '');
           });
           this.isLoading = false;
         }
@@ -97,7 +96,7 @@ export class AccountPasswordComponent implements OnInit {
   }
 
   /**
-   * Получение данных пользователя
+   * Receiving user data.
    */
   public getUser() {
     this.accountService.getUser('1', () => {}).subscribe((user) => {
@@ -106,8 +105,8 @@ export class AccountPasswordComponent implements OnInit {
   }
 
   /**
-   * Появление сообщения об ошибке при вводе некорректного значения
-   * @param control Поле ввода
+   * Error message when entering incorrect value.
+   * @param control Input
    * @return boolean
    */
   public isError(control: string): boolean {
@@ -115,7 +114,7 @@ export class AccountPasswordComponent implements OnInit {
   }
 
   /**
-   * Инициализация формы
+   * Form initialization.
    */
   private initForm(): any {
     this.form = this.fb.group({
@@ -132,9 +131,9 @@ export class AccountPasswordComponent implements OnInit {
   }
 
   /**
-   * Оповещение о выполнении действия
-   * @param message Сообщение
-   * @param action Действие
+   * Action Notification.
+   * @param message Message
+   * @param action Action
    */
   private openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {

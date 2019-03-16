@@ -13,11 +13,15 @@ import { PasswordRecovery } from '../models/password-recovery';
 import { User } from '../models/user';
 
 /**
- * Сервис для аутентификации
+ * Authentication Service.
  */
 @Injectable()
 export class AuthService {
-
+  /**
+   * Constructor
+   * @param requestService requestService
+   * @param jwtService jwtService
+   */
   constructor(
     private readonly requestService: RequestService,
     private readonly jwtService: JwtHelperService
@@ -25,10 +29,10 @@ export class AuthService {
   }
 
   /**
-   * Вход пользователя
-   * @param credential Данные пользователя
-   * @param complete Функция, которая вызывается в любом случае
-   * @return Observable
+   * User login.
+   * @param credential User data.
+   * @param complete Complete function.
+   * @return Observable.
    */
   public login(credential: Credential, complete?: Function): Observable<AccessToken> {
 
@@ -45,7 +49,7 @@ export class AuthService {
   }
 
   /**
-   * Выход из системы
+   * Sign Out.
    */
   public logOut() {
     localStorage.removeItem('access_token');
@@ -53,20 +57,20 @@ export class AuthService {
   }
 
   /**
-   * Запрос на сброс пароля
-   * @param email Почта
-   * @param complete Функция, которая вызывается в любом случае
-   * @return Observable
+   * Password reset request.
+   * @param email Email.
+   * @param complete Complete function.
+   * @return Observable.
    */
   public passwordReset(email: EmailRecovery, complete?: Function): Observable<number> {
     return this.requestService.post<number>(authConfig.api.passwordReset, complete, email, true);
   }
 
   /**
-   * Подтверждение почты
-   * @param code Ключ подверждения
-   * @param userid идентификатор пользователя
-   * @return Observable
+   * Email Verification.
+   * @param code Confirmation key.
+   * @param userid User ID.
+   * @return Observable.
    */
   public confirmEmail(code: string, userid: string): Observable<boolean> {
     return this.requestService.post<boolean>(authConfig.api.confirm_register, () => {},
@@ -79,9 +83,9 @@ export class AuthService {
   }
 
   /**
-   * Подтверждение смены пароля
-   * @param code Ключ подверждения
-   * @param userid идентификатор пользователя
+   * Password change confirmation.
+   * @param code Confirmation key.
+   * @param userid User ID.
    * @return Observable
    */
   public confirmPasswordReset(code: string, userid: string): Observable<boolean> {
@@ -94,9 +98,9 @@ export class AuthService {
   }
 
   /**
-   * Регистрация пользователя
-   * @param user Данные пользователя
-   * @param complete Функция, которая вызывается в любом случае
+   * User registration.
+   * @param user User ID.
+   * @param complete Complete function.
    * @return Observable
    */
   public register(user: User, complete?: Function): Observable<number> {
@@ -104,9 +108,9 @@ export class AuthService {
   }
 
   /**
-   * Сброс пароля
-   * @param recovery Данные для восстановления
-   * @param complete Функция, которая вызывается в любом случае
+   * Password reset.
+   * @param recovery Data to recover.
+   * @param complete Complete function.
    * @return Observable
    */
   public confirmResetPassword(recovery: PasswordRecovery, complete?: Function): Observable<number> {
@@ -114,7 +118,7 @@ export class AuthService {
   }
 
   /**
-   * Проверка токена jwt
+   * Token test jwt.
    * @return boolean
    */
   public get loggedIn(): boolean {

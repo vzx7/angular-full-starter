@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { AuthService } from '../../services/auth.service';
 
 /**
- * Сервис для проверки страницы подверждения смены пароля
+ * Service to check the password change confirmation page.
  */
 @Injectable()
 export class PasswordConfirmGuard implements CanActivate {
@@ -17,16 +17,16 @@ export class PasswordConfirmGuard implements CanActivate {
   ) { }
 
   /**
-   * Возможен ли переход по адресу
-   * @param route роутер
-   * @param state информация о запросе
+   * Link Guardian.
+   * @param route Router.
+   * @param state Request info.
    * @return boolean
    */
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     return true;
-    // TODO Добавить на бек запрос на подтверждения пользователя. Пока что отказались от этого
+    // TODO Add backing request to confirm user. So far, have refused this
     // if (route.queryParams.code && route.queryParams.userid) {
-    //   // Данная конструкция написана ввиду ошибки Uncaught Promise.
+    //   // This construction was written due to Uncaught Promise error.
     //   return Observable.create((observer) => {
     //     this.authService.confirmPasswordReset(route.queryParams.code, route.queryParams.userid)
     //       .subscribe((res) => {

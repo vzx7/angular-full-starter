@@ -1,54 +1,52 @@
 import { Injectable } from '@angular/core';
 
 /**
- * Сервис для показа нотификаций
+ * Service for displaying notifications
  */
 @Injectable()
 export class ToastService {
 
-  // TODO написать модуль показа сообщений как в Primeng, только без Observable
-constructor(
-  ) { }
+constructor( ) { }
   /**
-   * Вывод собщений об ошибках.
-   * @param message Сообщение для вывода.
-   * @param sticky Закрывать сообщение по требованию.
+   * Displays errors.
+   * @param message Message to display.
+   * @param sticky Close message on click.
    */
-  public showError(message: string, sticky?: boolean) {
+  public showError(message: string, sticky?: boolean): void {
     this.toastHandler('error-toast', message);
   }
 
   /**
-   * Вывод информационных собщений.
-   * @param message Сообщение для вывода.
-   * @param sticky Закрывать сообщение по требованию.
+   * Displays info.
+   * @param message Message to display.
+   * @param sticky Close message on click.
    */
-  public showInfo(message: string, sticky?: boolean) {
+  public showInfo(message: string, sticky?: boolean): void {
     this.toastHandler('info-toast', message);
   }
 
   /**
-   * Вывод успешных собщений.
-   * @param message Сообщение для вывода.
-   * @param sticky Закрывать сообщение по требованию.
+   * Displays success.
+   * @param message Message to display.
+   * @param sticky Close message on click.
    */
   public showSuccess(message: string, sticky?: boolean): void {
     this.toastHandler('success-toast', message);
   }
 
   /**
-   * Вывод успешных собщений.
-   * @param message Сообщение для вывода.
-   * @param sticky Закрывать сообщение по требованию.
+   * Displays alerts.
+   * @param message Message to display.
+   * @param sticky Close message on click.
    */
   public showWarning(message: string, sticky?: boolean): void {
     this.toastHandler('warning-toast', message);
   }
 
   /**
-   * Метод для отображения сообщений.
-   * @param  id Id элемента в DOM.
-   * @param message Сообщение для вывода.
+   * Method to display messages.
+   * @param  id Item ID in DOM.
+   * @param message Message to display.
    */
   private toastHandler(id: string, message: string): void {
     const toast = document.getElementById(id);

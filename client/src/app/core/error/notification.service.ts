@@ -4,7 +4,7 @@ import { publish, refCount } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 
 /**
- * Сервис нотификаций
+ * Service of notifications
  */
 @Injectable()
 export class NotificationService {

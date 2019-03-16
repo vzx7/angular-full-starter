@@ -1,19 +1,19 @@
 /**
- * Модель данных для входа в систему
+ * Login Data Model
  */
 export interface Credential {
   /**
-   * Логин.
+   * Login.
    */
   login: string;
 
   /**
-   * Фамилия.
+   * Last name.
    */
   password: string;
 
   /**
-   * Отчество.
+   * Patronymic.
    */
   rememberMe: boolean;
 }
