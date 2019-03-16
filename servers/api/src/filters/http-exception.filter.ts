@@ -13,10 +13,10 @@ export class HttpExceptionFilter implements ExceptionFilter {
         switch (status) {
             case 404:
                 // The business logic of error handling is transferred to the client.
-                response
+/*                 response
 
                 .status(200)
-                .send("index.html");
+                .send("index.html"); */
                 break;
         };
     }

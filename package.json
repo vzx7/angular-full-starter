@@ -18,7 +18,7 @@
     "docs:client": "cd client && npm run docs",
     "docs:api-server": "cd servers/api && npm run docs",
     "client:lint": "cd client && npm run lint",
-    "server:lint": "cd client && npm run lint"
+    "server:lint": "cd servers/api && npm run lint"
   },
   "husky": {
     "hooks": {
