@@ -2,7 +2,7 @@ import { Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/
 import { NgControl } from '@angular/forms';
 
 /**
- * Директива для валидации контролов после снятия фокуса.
+ * Directive for validating controls after removing focus.
  */
 @Directive({
   selector: '[appValidateOnBlur]'
@@ -13,17 +13,17 @@ export class ValidationOnBlurDirective implements OnDestroy {
   private wasChanged: any;
 
  /**
-  * Кастомный элемент ошибки.
+  * Custom error element.
   */
   private errorElement: HTMLSpanElement;
 
   /**
-   * Сообщение ошибки.
+   * Error message
    */
   private textMessage: string;
 
   /**
-   * Показ ошибки.
+   * Display message.
    */
   private showMessage: boolean;
 
@@ -66,8 +66,8 @@ export class ValidationOnBlurDirective implements OnDestroy {
   }
 
   /**
-   * Фокус на элементе.
-   * @param $event Событие
+   * Focus on the element.
+   * @param $event Event.
    */
   @HostListener('focus') public onFocus($event) {
     this.wasChanged = false;
@@ -78,32 +78,32 @@ export class ValidationOnBlurDirective implements OnDestroy {
   }
 
   /**
-   * Нажатие клавиши на элементе.
-   * @param $event Событие
+   * Pressing a key on an item.
+   * @param $event Event.
    */
   @HostListener('keyup') public onKeyup($event) {
     this.wasChanged = true;
   }
 
   /**
-   * Изменение элемента.
-   * @param $event Событие
+   * Item change.
+   * @param $event Event.
    */
   @HostListener('change') public onChange($event) {
     this.wasChanged = true;
   }
 
   /**
-   * Измененеи модели элемента.
-   * @param $event Событие
+   * Item model changes.
+   * @param $event Event.
    */
   @HostListener('ngModelChange') public onNgModelChange($event) {
     this.wasChanged = true;
   }
 
   /**
-   * Снятие фокуса элемента.
-   * @param $event Событие
+   * Remove the focus of the item.
+   * @param $event Event.
    */
   @HostListener('blur') public onBlur($event) {
     this.formControl.control.setAsyncValidators(this.asyncValidators);
@@ -114,14 +114,14 @@ export class ValidationOnBlurDirective implements OnDestroy {
   }
 
   /**
-   * Хук удаления директивы
+   * Hook removal directive.
    */
   public ngOnDestroy() {
     this.hide();
   }
 
   /**
-   * Добавление элемента в DOM
+   * Add item to DOM.
    */
   private show() {
     if (!this.textMessage) {
@@ -135,7 +135,7 @@ export class ValidationOnBlurDirective implements OnDestroy {
   }
 
   /**
-   * Удаление изэлемента из DOM
+   * Remove an element from the DOM.
    */
   private hide() {
     if (this.errorElement) {
@@ -143,5 +143,4 @@ export class ValidationOnBlurDirective implements OnDestroy {
       this.errorElement = null;
     }
   }
-
 }

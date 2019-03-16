@@ -1,18 +1,30 @@
 /**
- * Настройки модуля аутентификации.
+ * Authentication module settings.
  */
 interface AuthConfig {
-  // Настройки api
+  /**
+   * Api
+   */
   api: {
-    // Подтверждение пароля
+    /**
+     * Password confirmation.
+     */
     confirm_password: string,
-    // Подтверждение регистрации
+    /**
+     * Registration confirmation.
+     */
     confirm_register: string,
-    // Аутентификация
+    /**
+     * Auth.
+     */
     login: string;
-    // Регистрация
+    /**
+     * Registration
+     */
     register: string;
-    // Отправка почты для сброса пароля
+    /**
+     * Send mail to reset your password
+     */
     passwordReset: string;
   };
 }

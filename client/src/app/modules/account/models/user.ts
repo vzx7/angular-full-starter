@@ -1,5 +1,5 @@
 /**
- * Модель данных для пользователя
+ * User data model.
  */
 export interface User {
   /**
@@ -7,32 +7,32 @@ export interface User {
    */
   id: string;
   /**
-   * Фамилия
+   * Last Name
    */
   lastName: string;
 
   /**
-   * Имя
+   * Name
    */
   firstName: string;
 
   /**
-   * Отчество
+   * Patronymic
    */
   patronymic: string;
 
   /**
-   * Логин
+   * Login
    */
   login: string;
 
   /**
-   * Почтовый адрес
+   * E-mail
    */
   email: string;
 
   /**
-   * Пароль
+   * Password
    */
   password: string;
 }

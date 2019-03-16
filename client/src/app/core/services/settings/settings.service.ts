@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { versions } from '../../../../environments/versions';
 
 /**
- * Сервис настроек
+ * Settings service.
  */
 @Injectable()
 export class SettingsService {
@@ -11,7 +11,7 @@ export class SettingsService {
   constructor() {}
 
   /**
-   * Получение настроек.
+   * Getting settings.
    */
   public loadSettings(): void {
     console.log(JSON.stringify(versions));
