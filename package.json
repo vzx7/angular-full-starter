@@ -3,22 +3,24 @@
   "version": "0.0.0",
   "scripts": {
     "build:prod:client": "cd client && npm run build:prod",
-    "build:prod:api-server": "cd servers/api && npm run build",
-    "build": "npm run build:prod:api-server && npm run build:prod:client",
+    "build:prod:server-api": "cd servers/api && npm run build",
+    "build": "npm run build:prod:server-api && npm run build:prod:client",
     "test": "ng test --watch=false --code-coverage",
-    "install:api-server": "cd servers/api && npm i",
-    "install:prod-server": "cd servers/prod-static && npm i",
+    "install:server-api": "cd servers/api && npm i",
+    "install:server-prod": "cd servers/prod-static && npm i",
     "install:client": "cd client && npm i",
-    "install": "npm run install:api-server && npm run install:prod-server && npm run install:client",
+    "install": "npm run install:server-api && npm run install:server-prod && npm run install:client",
     "prebuild": "ts-node git.version.ts",
     "server:dev": "cd servers/api && npm run start:dev",
-    "server:prod": "cd servers/prod-static && npm start",
     "client:dev": "cd client && npm run start:dev",
     "bundle-report": "cd client && webpack-bundle-analyzer dist/client/stats.json",
     "docs:client": "cd client && npm run docs",
-    "docs:api-server": "cd servers/api && npm run docs",
+    "docs:server-api": "cd servers/api && npm run docs",
     "client:lint": "cd client && npm run lint",
-    "server:lint": "cd servers/api && npm run lint"
+    "server:lint": "cd servers/api && npm run lint",
+    "server-api:prod": "cd servers/api && npm run start:prod",
+    "server-static:prod": "cd servers/prod-static && npm start",
+    "start:prod": "npm run build && npm run server-api:prod && npm run server-static:prod"
   },
   "husky": {
     "hooks": {

@@ -1,9 +1,9 @@
-import { RolesDto } from 'dist/src/modules/roles/dto/roles.dto';
 import { Model } from 'mongoose';
 
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 
 import { Role } from '../models/role.interface';
+import { RolesDto } from '../dto/roles.dto';
 
 @Injectable()
 export class RolesService {
