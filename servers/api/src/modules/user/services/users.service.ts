@@ -10,7 +10,7 @@ import { User } from '../models/user.interface';
 @Injectable()
 export class UsersService {
 
-  constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) { }
+  constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) {}
 
   async createUser(data: CreateUpdateUserDto) {
     const createdUser = new this.userModel(data);

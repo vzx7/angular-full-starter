@@ -8,45 +8,45 @@ import { accountConfig } from '../account.configs';
 import { Password } from '../models/password';
 
 /**
- * Service for personal account.
+ * Сервис для личного кабинета
  */
 @Injectable()
 export class AccountService {
 
   /**
-   * Constructor
-   * @param requestService requestService
+   * Конструктрор
+   * @param requestService Сервис для связи с бекендом
    */
   constructor(
     private readonly requestService: RequestService
   ) { }
 
   /**
-   * Receiving user data.
-   * @param id User Id
-   * @param complete Complete function
-   * @return User
+   * Получение данных пользователя
+   * @param id Идентфиикатор пользователя
+   * @param complete Функция завершения
+   * @return Пользователь
    */
   public getUser(id: string, complete: Function): Observable<User> {
     return this.requestService.get(`${accountConfig.api.read}/${id}`, complete);
   }
 
   /**
-   * Edit User data
-   * @param user User
-   * @param complete Complete function
-   * @return User
+   * Редактирование данных пользователя
+   * @param user Пользователя
+   * @param complete Функция завершения
+   * @return Пользователь
    */
   public updateUser(user: User, complete: Function): Observable<User> {
     return this.requestService.put(`${accountConfig.api.update}/${user.id}`, user, complete);
   }
 
   /**
-   * Change password
-   * @param password Password
-   * @param user User
-   * @param complete Complete function
-   * @return Password
+   * Изменение пароля
+   * @param password Пароль
+   * @param user Пользователь
+   * @param complete Функция завершения
+   * @return Пароль
    */
   public changePassword(password: Password, user: User, complete: Function): Observable<User> {
     return this.requestService.put(`${accountConfig.api.updatePassword}/${user.id}`, password, complete);

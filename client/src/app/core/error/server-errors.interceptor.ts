@@ -5,7 +5,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import { Injectable } from '@angular/core';
 
 /**
- * Server Error Handler Interceptor
+ * Перехватчик обработки ошибок с сервера
  */
 @Injectable()
 export class ServerErrorsInterceptor implements HttpInterceptor {

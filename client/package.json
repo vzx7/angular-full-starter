@@ -8,7 +8,7 @@
     "test": "ng test --watch=false --code-coverage",
     "lint": "ng lint && stylelint src/**/*.scss && htmlhint src",
     "install:api": "npm i && cd api && npm i",
-    "start:dev": "ng s --host 0.0.0.0",
+    "start:dev": "concurrently --raw \"ng s --host 0.0.0.0\"",
     "bundle-report": "webpack-bundle-analyzer dist/is/stats.json",
     "docs": "compodoc -p tsconfig.json -s"
   },

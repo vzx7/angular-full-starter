@@ -1,19 +1,19 @@
 /**
- * Password data model
+ * Модель данных для пароля
  */
 export interface Password {
   /**
-   * Current password.
+   * Текущий пароль
    */
   password: string;
 
   /**
-   * New password.
+   * Новый пароль
    */
   newPassword: string;
 
   /**
-   * Reapit new password.
+   * Повтор нового пароля
    */
   repeatNewPassword: string;
 }

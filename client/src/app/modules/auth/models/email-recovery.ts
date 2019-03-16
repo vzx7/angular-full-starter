@@ -1,9 +1,9 @@
 /**
- * Data model for password recovery by mail.
+ * Модель данных для восстановления пароля по почте
  */
 export interface EmailRecovery {
   /**
-   * E-mail.
+   * Почта
    */
   email: string;
 }

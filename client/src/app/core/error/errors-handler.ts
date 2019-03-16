@@ -5,7 +5,7 @@ import { environment } from '../../../environments/environment';
 import { ToastService } from '../../core/services/toast/toast.service';
 
 /**
- * Errors handler
+ * Обработчик ошибок
  */
 @Injectable()
 export class ErrorsHandler implements ErrorHandler {
@@ -14,35 +14,35 @@ export class ErrorsHandler implements ErrorHandler {
   ) { }
 
   /**
-   * Errors handler
-   * @param error Error
+   * Обработка событий
+   * @param error Ошибка
    */
   public handleError(error: Error | HttpErrorResponse): void {
 
     if (error instanceof HttpErrorResponse) {
-      // Server error
+      // Серверная ошибка
       if (!navigator.onLine) {
-        return this.showError('No internet connection', 'No internet connection');
+        return this.showError('Отсутствует интернет соединение', 'Отсутствует интернет соединение');
       }
 
-      // Http error
+      // Http Ошибка
       const errorStatus = 400;
       let errorMessage = '500';
       if (error.status === errorStatus) {
         errorMessage = error.error;
       }
 
-      return this.showError(error, 'Error from server');
+      return this.showError(error, 'Ошибка с сервера');
     } else {
-      // Client error
+      // Клиентская ошибка
       return this.showError(error, error.message);
     }
   }
 
   /**
-   * Show errors
-   * @param toConsole Error output to console
-   * @param toUser Error output for user
+   * Показ ошибок
+   * @param toConsole Вывод ошибки в консоль
+   * @param toUser Вывод ошибки пользователю
    */
   private showError(toConsole: any, toUser: string): void {
     const toastService = this.injector.get(ToastService);

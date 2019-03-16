@@ -1,7 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 
 import {
-    CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable
+  CanActivate, ExecutionContext, HttpException, HttpStatus, Injectable
 } from '@nestjs/common';
 import { GqlExecutionContext } from '@nestjs/graphql';
 

@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { PasswordStrength } from '../../models/password-strength';
 
 /**
- * Password validation display component.
+ * Компонент показа валидации пароля
  */
 @Component({
   selector: 'app-password-checker',
@@ -14,11 +14,12 @@ export class PasswordCheckerComponent {
 
   public passwordStrength: PasswordStrength;
 
-  constructor() {  }
+  constructor() {
+  }
 
   /**
-   * Password strength check
-   * @param value password value
+   * Просчет строгости пароля
+   * @param value значение пароля
    */
   @Input('password') set password(value: string) {
     const passwordLength = 8;
@@ -32,11 +33,12 @@ export class PasswordCheckerComponent {
   }
 
   /**
-   * Determine the path to the checkbox
-   * @param value Value of rigor.
-   * @return path to the image.
+   * Взятие пути до чекбокса
+   * @param value Значение строгости
+   * @return путь до изображения
    */
   public getCheckboxPath(value: string): string {
     return this.passwordStrength[value] ? 'assets/images/checkbox-on.png' : 'assets/images/checkbox-off.png';
   }
+
 }

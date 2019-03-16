@@ -2,37 +2,37 @@ import { Injectable } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 
 /**
- * Service for working with forms.
+ * Сервис для работы с формами
  */
 @Injectable()
 export class FormService {
   /**
-   * Regexp for natural numbers
+   * Regexp для натуральных чисел
    */
   public readonly intRegexp: RegExp;
 
   /**
-   * Regexp for small numbers
+   * Regexp для дробных чисел
    */
   public readonly floatRegexp: RegExp;
 
   /**
-   * Regexp for non-space strings
+   * Regexp для строк вне пробела
    */
   public readonly nonWhiteSpaceRegexp: RegExp;
 
   /**
-   * Regexp for date
+   * Regexp для дат
    */
   public readonly dateRegexp: RegExp;
 
   /**
-   * Regexp for password
+   * Regexp для пароля
    */
   public readonly passwordRegexp: RegExp;
 
   /**
-   * Regexp for length
+   * Regexp для пароля
    */
   public readonly maxLength = 250;
 
@@ -45,8 +45,8 @@ export class FormService {
   }
 
   /**
-   * Validation password
-   * @param control Control
+   * Валидация пароля
+   * @param control Контрол
    * @return ValidationResult
    */
   public static passwordValidator(control: FormControl): boolean {
@@ -62,17 +62,17 @@ export class FormService {
   }
 
   /**
-   * Validation form
-   * @param form Form
-   * @return Valid form.
+   * Валидация формы
+   * @param form Форма
+   * @return Валидна ли форма
    */
   public validateForm(form: FormGroup): boolean {
     if (form.invalid) {
       const controls = form.controls;
-      // If the form is not valid, then mark all controls as touched.
+      // Если форма не валидна, то помечаем все контролы как touched
       Object.keys(controls)
         .forEach((controlName) => controls[controlName].markAsTouched());
-      // Interrupt method execution
+      // Прерывание выполнение метода
 
       return false;
     } else {
@@ -81,20 +81,20 @@ export class FormService {
   }
 
   /**
-   * Validation field.
-   * @param form Form.
-   * @param field Field.
-   * @param formSubmitAttempt Whether the input form is pressed.
-   * @return Valid field
+   * Валидация поля
+   * @param form Форма
+   * @param field Поле
+   * @param formSubmitAttempt Нажата ли форма ввода
+   * @return Валидно ли поле
    */
   public isFieldInValid(form: FormGroup, field: string, formSubmitAttempt: boolean): boolean {
     return form.get(field).errors && formSubmitAttempt;
   }
 
   /**
-   * Password validation.
-   * @param control Contrlol.
-   * @return Valid password.
+   * Валидация подтверждения пароля
+   * @param control Родительский контрол
+   * @return валиден ли контрол
    */
   public matchPassword(control: AbstractControl): any {
     const password = control.get('password').value;
