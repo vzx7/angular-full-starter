@@ -8,13 +8,13 @@ import { environment } from '../../../../../environments/environment';
 import { appConfig } from '../../../../app.configs';
 
 /**
- * Сервис обработки запросов
+ * Request Processing Service.
  */
 @Injectable()
 export class RequestService {
 
  /**
-  * Заголовки
+  * Headers.
   */
   private readonly header;
 
@@ -27,13 +27,13 @@ export class RequestService {
   }
 
   /**
-   * Запрос POST.
-   * @param url Урл.
-   * @param complete Функция, которая вызывается в любом случае
-   * @param body Тело запроса.
-   * @param isRealBack Проводить ли запросы через реальный бекенд.
-   * @param headers Поля заголовков.
-   * @return Вернет Observable объекта ответа.
+   * POST.
+   * @param url Url.
+   * @param complete Complete function.
+   * @param body Body request.
+   * @param isRealBack Whether to carry out requests through a real backend.
+   * @param headers Header fields
+   * @return Returns the Observable of the response object.
    */
   public post<T>(url: string, complete?: Function, body?: Object,
     isRealBack = false, headers?: Object): Observable<T> {
@@ -44,12 +44,12 @@ export class RequestService {
   }
 
   /**
-   * Запрос GET.
-   * @param url Урл.
-   * @param complete Функция, которая вызывается в любом случае
-   * @param isRealBack Проводить ли запросы через реальный бекенд.
-   * @param headers Поля заголовков.
-   * @return Вернет Observable объекта ответа.
+   * GET.
+   * @param url Url.
+   * @param complete Complete function.
+   * @param isRealBack Whether to carry out requests through a real backend.
+   * @param headers Header fields
+   * @return Returns the Observable of the response object.
    */
   public get<T>(url: string, complete?: Function, isRealBack = false, headers?: Object): Observable<T> {
     return this.httpClient.get<T>(this.getHost(isRealBack) + url, { headers: headers || this.header })
@@ -59,13 +59,13 @@ export class RequestService {
   }
 
   /**
-   * Запрос PUT.
-   * @param url Урл.
-   * @param body Тело запроса.
-   * @param complete Функция, которая вызывается в любом случае
-   * @param isRealBack Проводить ли запросы через реальный бекенд.
-   * @param headers Поля заголовков.
-   * @return Вернет Observable объекта ответа.
+   * PUT.
+   * @param url Url.
+   * @param body Body request.
+   * @param complete Complete function.
+   * @param isRealBack Whether to carry out requests through a real backend.
+   * @param headers Header fields
+   * @return Returns the Observable of the response object.
    */
   public put<T>(url: string, body?: Object, complete?: Function, isRealBack = false, headers?: Object): Observable<T> {
     return this.httpClient.put<T>(this.getHost(isRealBack) + url, body, { headers: headers || this.header })
@@ -75,11 +75,11 @@ export class RequestService {
   }
 
   /**
-   * Получить файл.
-   * @param url Урл.
-   * @param complete Функция, которая вызывается в любом случае
-   * @param querryParams Параметры запроса.
-   * @return Observable типа
+   * Get file.
+   * @param url Url.
+   * @param complete Complete function.
+   * @param querryParams Query parameters.
+   * @return Observable type.
    */
   public getBlobRest<T>(url: string, complete?: Function, querryParams?: string): Observable<T | any> {
     return this.httpClient.get(environment.host + url,
@@ -93,9 +93,9 @@ export class RequestService {
   }
 
   /**
-   * Формирование query параметра для GET.
-   * @param params Объект с параметрами.
-   * @return Вернет строку запроса.
+   * Formation of the query parameter for GET.
+   * @param params Object with parameters.
+   * @return Returns the query string.
    */
   public prepareGetParams(params: Object): string {
     let query = '';
@@ -111,8 +111,8 @@ export class RequestService {
   }
 
   /**
-   * Формируем заголовки для отправки
-   * @return Заголовки
+   * We form titles for sending.
+   * @return headers
    */
   public setHeadersForMultipartFormData(): HttpHeaders {
     const headers = new HttpHeaders();
@@ -123,9 +123,9 @@ export class RequestService {
   }
 
   /**
-   * Взятие хоста
-   * @param isReal Необходим ли реальный бекенд
-   * @return хост
+   * Get host.
+   * @param isReal Is a real backend needed.
+   * @return host.
    */
   private getHost(isReal: boolean): string {
     return isReal ? environment.host : environment.host;

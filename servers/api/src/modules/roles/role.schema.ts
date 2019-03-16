@@ -6,5 +6,5 @@ export const RoleSchema = new mongoose.Schema({
   createdAt: String,
   updatedAt: String,
   // TODO решить с юзер
-  //users: String[],
+  // users: String[],
 });

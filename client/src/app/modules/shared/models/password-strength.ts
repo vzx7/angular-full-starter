@@ -1,21 +1,21 @@
 /**
- * Модель данных для стойкости пароля
+ * Password strength data model.
  */
 export interface PasswordStrength {
   /**
-   * Длина больше 8 символов
+   * Length more than 8 characters.
    */
   length: boolean;
   /**
-   * Имеется цифра
+   * digits exist.
    */
   digits: boolean;
   /**
-   * Имеется заглавная буква
+   * capital exist.
    */
   capital: boolean;
   /**
-   * Имеется строчная буква
+   * lowerCase exist.
    */
   lowerCase: boolean;
 }

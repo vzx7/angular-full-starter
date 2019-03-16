@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { AuthService } from '../../services/auth.service';
 
 /**
- * Сервис для проверки страницы успешной отпраки письма
+ * Service to check the page successful letter.
  */
 @Injectable()
 export class RegisterSuccessGuard implements CanActivate {
@@ -17,10 +17,10 @@ export class RegisterSuccessGuard implements CanActivate {
   ) { }
 
   /**
-   * Возможен ли переход по адресу
-   * @param route роутер
-   * @param state информация о запросе
-   * @return boolean
+   * Link Guardian.
+   * @param route Router.
+   * @param state Request info.
+   * @return booleanan
    */
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     return true;

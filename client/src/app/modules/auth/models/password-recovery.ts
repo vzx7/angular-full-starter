@@ -1,19 +1,19 @@
 /**
- * Модель данных для восстановления пароля
+ * Password recovery data model.
  */
 export interface PasswordRecovery {
   /**
-   * Захешированный пароль
+   * Password hashed.
    */
   password: string;
 
   /**
-   * Ключ восстановления для идентификации с пользователем
+   * Recovery key for user identification.
    */
   code: string;
 
   /**
-   * Идентификатор пользователя
+   * User ID.
    */
   userid: string;
 }
