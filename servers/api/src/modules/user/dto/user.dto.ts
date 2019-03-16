@@ -1,5 +1,3 @@
-import { RolesEntity } from '../../roles/roles.entity';
-
 export class UserDto {
   id?: string;
   firstName: string;
@@ -7,5 +5,6 @@ export class UserDto {
   username: string;
   email: string;
   token?: string;
-  role?: RolesEntity;
+  // TODO Нужен тип
+  role?: any;
 }

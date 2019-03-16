@@ -1,10 +1,11 @@
 import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { UserDto } from './dto/user.dto';
-import { CreateUpdateUserDto } from './dto/create-update-user.dto';
+
 import { Roles } from '../../decorators/roles.decorators';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
+import { CreateUpdateUserDto } from './dto/create-update-user.dto';
+import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 
 @Resolver('User')

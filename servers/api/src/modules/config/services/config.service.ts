@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
-import * as Joi from 'joi';
 import * as fs from 'fs';
+import * as Joi from 'joi';
 
 export interface EnvConfig {
   [key: string]: string;
@@ -23,10 +23,11 @@ export class ConfigService {
       NODE_ENV: Joi.string()
         .valid(['development', 'production', 'test', 'provision'])
         .default('development'),
-      PORT: Joi.number().default(3000),
+      API_PORT: Joi.number().default(3000),
       API_AUTH_ENABLED: Joi.boolean().required(),
-      DB_NAME: Joi.string().required(),
-      MONGO_URI: Joi.string().required(),
+      MONGO_URL: Joi.string().required(),
+      MONGO_DB_NAME: Joi.string().required(),
+      MONGO_PORT: Joi.number().required(),
     });
 
     const { error, value: validatedEnvConfig } = Joi.validate(
@@ -40,10 +41,18 @@ export class ConfigService {
   }
 
   get port(): string {
-    return String(this.envConfig.PORT);
+    return String(this.envConfig.API_PORT);
   }
 
   get mongoUri(): string {
-    return this.envConfig.MONGO_URI;
+    return String(this.envConfig.MONGO_URL);
+  }
+
+  get mongoPort(): string {
+    return String(this.envConfig.MONGO_PORT);
+  }
+
+  get mongoDbName(): string {
+    return String(this.envConfig.MONGO_DB_NAME);
   }
 }

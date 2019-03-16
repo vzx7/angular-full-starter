@@ -1,5 +1,3 @@
-import { UserType } from '../enums/user-type.enum';
-
 export class CreateUserDto {
   public id: string;
   public firstName: string;

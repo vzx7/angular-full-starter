@@ -1,11 +1,11 @@
 import { Model } from 'mongoose';
-import { Injectable, HttpException, HttpStatus, Inject } from '@nestjs/common';
-import { UsersEntity } from '../users.entity';
-import { RolesEntity } from '../../roles/roles.entity';
-import { UserDto } from '../dto/user.dto';
-import { CreateUpdateUserDto } from '../dto/create-update-user.dto';
-import { User } from '../models/user.interface';
+
+import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+
 import { JwtPayload } from '../../auth/models/jwt-payload.interface';
+import { CreateUpdateUserDto } from '../dto/create-update-user.dto';
+import { UserDto } from '../dto/user.dto';
+import { User } from '../models/user.interface';
 
 @Injectable()
 export class UsersService {

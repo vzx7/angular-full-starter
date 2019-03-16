@@ -1,5 +1,4 @@
-import { ExceptionFilter, Catch, ArgumentsHost } from '@nestjs/common';
-import { HttpException } from '@nestjs/common';
+import { ArgumentsHost, Catch, ExceptionFilter, HttpException } from '@nestjs/common';
 
 /**
  * Filter for HttpException
@@ -15,8 +14,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
             case 404:
                 // The business logic of error handling is transferred to the client.
                 response
+
                 .status(200)
-                .sendFile("index.html");
+                .send("index.html");
                 break;
         };
     }

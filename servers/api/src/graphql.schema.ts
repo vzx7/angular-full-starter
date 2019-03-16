@@ -16,31 +16,7 @@ export class UpdateUseInput {
     roleName: string;
 }
 
-export class Message {
-    id: string;
-    text: string;
-    createdAt: string;
-    updatedAt: string;
-    user: User;
-}
-
-export class MessageConnection {
-    edges: Message[];
-    pageInfo: PageInfo;
-}
-
-export class MessageCreated {
-    message: Message;
-    messages: MessageConnection;
-}
-
 export abstract class IMutation {
-    abstract createMessage(text: string): Message | Promise<Message>;
-
-    abstract updateMessage(id: string, text: string): Message | Promise<Message>;
-
-    abstract deleteMessage(id: string): boolean | Promise<boolean>;
-
     abstract createRole(name: string): Role | Promise<Role>;
 
     abstract updateRole(id: string, name: string): Role | Promise<Role>;
@@ -58,16 +34,7 @@ export abstract class IMutation {
     abstract deleteUser(id: string): boolean | Promise<boolean>;
 }
 
-export class PageInfo {
-    page: number;
-    limit: number;
-}
-
 export abstract class IQuery {
-    abstract messages(page?: number, limit?: number, newest?: boolean): MessageConnection | Promise<MessageConnection>;
-
-    abstract message(id: string): Message | Promise<Message>;
-
     abstract roles(): Role[] | Promise<Role[]>;
 
     abstract role(id: string): Role | Promise<Role>;
@@ -88,10 +55,6 @@ export class Role {
     updatedAt: string;
 }
 
-export abstract class ISubscription {
-    abstract messageCreated(): Message | Promise<Message>;
-}
-
 export class Token {
     token: string;
 }
@@ -105,5 +68,4 @@ export class User {
     role: Role;
     createdAt: string;
     updatedAt: string;
-    messages: Message[];
 }

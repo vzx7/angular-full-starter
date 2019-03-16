@@ -1,11 +1,14 @@
+import { PubSub } from 'graphql-subscriptions';
+import { Roles } from 'src/decorators/roles.decorators';
+
 import { ParseIntPipe, UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { PubSub } from 'graphql-subscriptions';
-import { RolesService } from './roles.service';
-import { RolesDto } from './dto/roles.dto';
+
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
-import { Roles } from '../decorators/roles.decorators';
+import { RolesDto } from './dto/roles.dto';
+import { RolesService } from './services/roles.service';
+
 const pubSub = new PubSub();
 
 @Resolver('Role')

@@ -5,9 +5,9 @@ import { GraphQLModule } from '@nestjs/graphql';
 
 import { AppController } from './app.controller';
 import { ConfigModule } from './modules/config/config.module';
+import { RolesModule } from './modules/roles/roles.module';
 import { UsersModule } from './modules/user/users.module';
 
-require('dotenv').config();
 @Module({
   imports: [
     ConfigModule,
@@ -25,6 +25,7 @@ require('dotenv').config();
       },
     }),
     UsersModule,
+    RolesModule
   ],
   controllers: [
     AppController
