@@ -10,14 +10,13 @@ import { User } from '../models/user.interface';
 @Injectable()
 export class UsersService {
 
-  constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) {}
+  constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) { }
 
   async createUser(data: CreateUpdateUserDto) {
     const createdUser = new this.userModel(data);
 
     return await createdUser.save();
   }
-
 
   async findAll(page: number = 1, limit: number = 20, newest: boolean = true) {
 
@@ -47,8 +46,6 @@ export class UsersService {
 
     return [];
   }
-
-
 
   async updateUser(data: /* CreateUpdateUserDto */ any) {
 

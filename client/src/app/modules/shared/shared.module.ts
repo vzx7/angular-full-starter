@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { PasswordCheckerComponent } from './components/password-checker/password-checker.component';
-import { TableRowEditDirective } from './directives/table-row-edit/table-row-edit.directive';
 import { ValidationOnBlurDirective } from './directives/validate-onblur/validate-onblur.directive';
 import { DateService } from './services/date/date.service';
 import { FormService } from './services/form/form.service';
@@ -18,7 +17,6 @@ import { RequestService } from './services/request/request.service';
   ],
   declarations: [
     PasswordCheckerComponent,
-    TableRowEditDirective,
     ValidationOnBlurDirective
   ],
   exports: [
@@ -26,7 +24,6 @@ import { RequestService } from './services/request/request.service';
     FormsModule,
     ReactiveFormsModule,
     PasswordCheckerComponent,
-    TableRowEditDirective,
     TranslateModule,
     ValidationOnBlurDirective,
   ]

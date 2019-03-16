@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 // import { AuthService } from '../../services/auth.service';
 
 /**
- * Сервис для проверки аутентификации пользователя
+ * Service to verify user authentication.
  */
 @Injectable()
 export class LoggedGuard implements CanActivate {
@@ -17,9 +17,9 @@ export class LoggedGuard implements CanActivate {
   ) { }
 
   /**
-   * Возможен ли переход по адресу
-   * @param route роутер
-   * @param state информация о запросе
+   * Link Guardian.
+   * @param route Router.
+   * @param state Request info.
    * @return boolean
    */
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {

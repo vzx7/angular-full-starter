@@ -8,9 +8,9 @@ import { RolesService } from './services/roles.service';
 @Module({
   imports: [DatabaseModule],
   providers: [
-    RolesService, 
-    RolesResolvers, 
+    RolesService,
+    RolesResolvers,
     ...rolesProviders
   ],
 })
-export class RolesModule {}
+export class RolesModule { }

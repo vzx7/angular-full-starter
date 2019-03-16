@@ -8,7 +8,7 @@ import { NotificationService } from './notification.service';
 import { ServerErrorsInterceptor } from './server-errors.interceptor';
 
 /**
- * Модуль обработки ошибок
+ * Error handling module
  */
 @NgModule({
   imports: [

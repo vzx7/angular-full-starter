@@ -6,7 +6,7 @@ import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from
 import { AuthService } from '../../services/auth.service';
 
 /**
- * Сервис для проверки страницы подверждения почты при регистрации
+ * Service to check the confirmation page during registration.
  */
 @Injectable()
 export class RegisterConfirmGuard implements CanActivate {
@@ -17,24 +17,24 @@ export class RegisterConfirmGuard implements CanActivate {
   ) { }
 
   /**
-   * Возможен ли переход по адресу
-   * @param route роутер
-   * @param state информация о запросе
-   * @return boolean
+   * Link Guardian.
+   * @param route Router.
+   * @param state Request info.
+   * @return booleanan
    */
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     if (route.queryParams.code && route.queryParams.userid) {
-      // Данная конструкция написана ввиду ошибки Uncaught Promise.
+      // This construction was written due to Uncaught Promise error.
       return Observable.create((observer) => {
         this.authService.confirmEmail(route.queryParams.code, route.queryParams.userid)
-        .subscribe(
-          (res) => {
-            observer.next(true);
-          },
-          (err) => {
-            this.router.navigate(['/']);
-            observer.next(false);
-        });
+          .subscribe(
+            (res) => {
+              observer.next(true);
+            },
+            (err) => {
+              this.router.navigate(['/']);
+              observer.next(false);
+            });
       });
     } else {
       this.router.navigate(['/']);

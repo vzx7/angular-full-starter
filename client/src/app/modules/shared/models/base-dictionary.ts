@@ -1,13 +1,13 @@
 /**
- * Базовый класс для словарей.
+ * Base class for dictionaries.
  */
 export interface BaseDictionary {
   /**
-   * Идентификатор
+   * Id.
    */
   id: string;
   /**
-   * Имя
+   * Name.
    */
   name: string;
 }

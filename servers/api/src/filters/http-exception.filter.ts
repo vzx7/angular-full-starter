@@ -18,6 +18,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
                 .status(200)
                 .send("index.html"); */
                 break;
-        };
+        }
     }
 }

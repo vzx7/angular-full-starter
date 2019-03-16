@@ -1,8 +1,8 @@
 /**
- * Настройки приложения.
+ * Settings app.
  */
 interface AppConfig {
-  // Настройки api
+  // api
   api: {
     worker: string;
   };
