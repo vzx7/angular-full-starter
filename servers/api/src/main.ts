@@ -15,6 +15,6 @@ async function bootstrap() {
   //app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());
   await app.listen(port);
-  console.log(`server up on http://localhost:${port}/`);
+  console.log(`Api server run now at port http://localhost:${port}/`);
 }
 bootstrap();
