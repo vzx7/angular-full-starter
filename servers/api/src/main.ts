@@ -6,6 +6,7 @@ import { HttpExceptionFilter } from './filters/http-exception.filter';
 import { ConfigService } from './modules/config/services/config.service';
 
 import cors = require('cors');
+import { join } from 'path';
 
 async function bootstrap() {
   const config = new ConfigService(`${process.env.NODE_ENV}.env`);
@@ -14,6 +15,8 @@ async function bootstrap() {
   app.use(cors());
   // app.useGlobalFilters(new HttpExceptionFilter());
   app.useGlobalPipes(new ValidationPipe());
+  console.log(join(__dirname, 'uploads'));
+  app.useStaticAssets(join(__dirname, 'uploads'));
   await app.listen(port);
   console.log(`Api server run now at port http://localhost:${port}/`);
 }

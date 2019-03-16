@@ -9,6 +9,9 @@ import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './models/user.interface';
+import { Upload, IFile } from './models/upload';
+import path, { join } from 'path';
+import { lowdb, collections } from './models/db';
 
 @Resolver('User')
 export class UsersResolvers {
@@ -70,5 +73,13 @@ export class UsersResolvers {
   async signUp(@Args('signUp') args: UpdateUserDto): Promise<string> {
     console.log(args);
     return await this.usersService.signUp(args);
+  }
+
+  @Mutation('singleUpload')
+  async singleUpload(@Args('file') file): Promise<IFile> {
+    const upload = new Upload(
+      { dir: join(__dirname, '../../../uploads/images'), collectionName: collections.uploads }
+    );
+    return upload.singleUpload(file, lowdb);
   }
 }

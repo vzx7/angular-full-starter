@@ -13,12 +13,12 @@ import { UsersService } from '../../services/users.service';
  * The component of the password change form in the personal account.
  */
 @Component({
-  selector: 'app-account-password',
-  templateUrl: './account-password.component.html',
-  styleUrls: ['./account-password.component.scss']
+  selector: 'app-change-password',
+  templateUrl: './change-password.component.html',
+  styleUrls: ['./change-password.component.scss']
 })
 
-export class AccountPasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
 
   @ViewChild('ngForm') public ngForm: NgForm;
 

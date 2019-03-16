@@ -52,3 +52,6 @@
 
 #docs
 **/db
+
+#uploads
+**/uploads/*

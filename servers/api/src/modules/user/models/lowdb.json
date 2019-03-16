@@ -1,0 +1,81 @@
+{
+  "uploads": [
+    {
+      "id": "BKz9lphtb",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/src/uploads/BKz9lphtb-viber.deb",
+      "mimetype": "application/vnd.debian.binary-package",
+      "encoding": "7bit",
+      "filename": "viber.deb"
+    },
+    {
+      "id": "sGjVWv7PHj",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/src/uploads/sGjVWv7PHj-viber.deb",
+      "mimetype": "application/vnd.debian.binary-package",
+      "encoding": "7bit",
+      "filename": "viber.deb"
+    },
+    {
+      "id": "uWA5rvbeQ",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/src/uploads/uWA5rvbeQ-Dockerfile",
+      "mimetype": "application/octet-stream",
+      "encoding": "7bit",
+      "filename": "Dockerfile"
+    },
+    {
+      "id": "2mexnmK8m",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/src/uploads/2mexnmK8m-kmb_front.docx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "encoding": "7bit",
+      "filename": "kmb_front.docx"
+    },
+    {
+      "id": "e8VxLi4cg",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/src/uploads/e8VxLi4cg-user-cog-solid.svg",
+      "mimetype": "image/svg+xml",
+      "encoding": "7bit",
+      "filename": "user-cog-solid.svg"
+    },
+    {
+      "id": "G1SUz2y8C",
+      "filepath": "/home/zx/Documents/Home_Project/servers/uploads/G1SUz2y8C-реквиз-ВВ.pdf",
+      "mimetype": "application/pdf",
+      "encoding": "7bit",
+      "filename": "реквиз-ВВ.pdf"
+    },
+    {
+      "id": "1dKRu3Xga",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/uploads/images/1dKRu3Xga-user-cog-solid.svg",
+      "mimetype": "image/svg+xml",
+      "encoding": "7bit",
+      "filename": "user-cog-solid.svg"
+    },
+    {
+      "id": "pbgqNMJaC",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/uploads/images/pbgqNMJaC-реквиз-ВВ.pdf",
+      "mimetype": "application/pdf",
+      "encoding": "7bit",
+      "filename": "реквиз-ВВ.pdf"
+    },
+    {
+      "id": "hdEOKqHkR",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/uploads/images/hdEOKqHkR-uWA5rvbeQ-Dockerfile",
+      "mimetype": "application/octet-stream",
+      "encoding": "7bit",
+      "filename": "uWA5rvbeQ-Dockerfile"
+    },
+    {
+      "id": "Io1Jg_aG9",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/uploads/images/Io1Jg_aG9-kmb_front.docx",
+      "mimetype": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "encoding": "7bit",
+      "filename": "kmb_front.docx"
+    },
+    {
+      "id": "Jf8Q8Sv2M",
+      "filepath": "/home/zx/Documents/Home_Project/servers/api/uploads/images/Jf8Q8Sv2M-user-cog-solid.svg",
+      "mimetype": "image/svg+xml",
+      "encoding": "7bit",
+      "filename": "user-cog-solid.svg"
+    }
+  ]
+}

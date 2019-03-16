@@ -87,3 +87,11 @@ export const deleteUsers = gql`
     deleteUsers(ids: $ids)
   }
 `;
+
+export const uploadFile = gql`
+  mutation uploadFile($file: Upload!) {
+    uploadFile(file: $file) {
+      filename
+    }
+  }
+`;

@@ -13,8 +13,9 @@ import { IUser } from '../interfaces/i.user';
 import { User } from '../models/user.model';
 import accountConfig from '../users.configs';
 import {
-    createUser, deleteUser, deleteUsers, queryUser, queryUsers, updateUser
+    createUser, deleteUser, deleteUsers, queryUser, queryUsers, updateUser, uploadFile
 } from '../users.gql.constants';
+import { FileUploadService } from 'core/services/file-upload/file-upload.service';
 
 /**
  * Service for users.
@@ -26,10 +27,12 @@ export class UsersService {
    * Constructor
    * @param requestService requestService
    * @param apollo apollo-angular
+   * @param fileUploadService FileUploadService
    */
   constructor(
     private readonly requestService: RequestService,
-    private readonly apollo: Apollo
+    private readonly apollo: Apollo,
+    private readonly fileUploadService: FileUploadService
   ) { }
 
   /**
@@ -73,7 +76,6 @@ export class UsersService {
           ...user
         },
         refetchQueries: [
-          { query: queryUser},
           { query: queryUsers }
         ]
       })
@@ -155,6 +157,13 @@ export class UsersService {
         map(({ data }: any) => data.deleteUsers),
         catchError(handleError)
       );
+  }
+
+  public savePhoto(file: FileList): Observable<boolean> {
+    return this.fileUploadService.upload(file).pipe(
+      map(({ data }: any) => data),
+      catchError(handleError)
+    );
   }
 
   /**

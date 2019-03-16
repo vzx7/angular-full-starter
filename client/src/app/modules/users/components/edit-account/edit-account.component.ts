@@ -2,7 +2,7 @@ import { ToastService } from 'core/services/toast/toast.service';
 import { IUser } from 'modules/users/interfaces/i.user';
 import { User } from 'modules/users/models/user.model';
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -21,6 +21,11 @@ export class EditAccountComponent implements OnInit {
    * Form
    */
   @ViewChild('form') public form: NgForm;
+
+  /**
+   * File
+   */
+  @ViewChild('fileInput') public fileInput: ElementRef;
 
   /**
    * Displaying the content loading process.
@@ -66,6 +71,13 @@ export class EditAccountComponent implements OnInit {
           this.router.navigate(['/users']);
         });
 
+    }
+  }
+
+  public onChangePhoto(event: any): void {
+    const { files, validity } = event.target;
+    if (validity.valid) {
+      this.usersService.savePhoto(files).subscribe();
     }
   }
 }
