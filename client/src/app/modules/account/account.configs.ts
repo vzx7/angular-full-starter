@@ -1,8 +1,8 @@
 /**
- * Settings account module.
+ * Настройки модуля.
  */
 interface AccountConfig {
-  // Api
+  // Настройки api
   api: {
     read: string;
     update: string;

@@ -1,29 +1,29 @@
 /**
- * User data model.
+ * Модель данных для пользователя
  */
 export interface User {
   /**
-   * Name.
+   * Имя.
    */
   firstName: string;
 
   /**
-   * Last name.
+   * Фамилия.
    */
   lastName: string;
 
   /**
-   * Patronymic.
+   * Отчество.
    */
   patronymic: string;
 
   /**
-   * E-mail.
+   * Почтовый адрес.
    */
   email: string;
 
   /**
-   * Password.
+   * Пароль
    */
   password: string;
 }

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 /**
- * Service for working with dates.
+ * Сервис для работы с датами
  */
 @Injectable()
 export class DateService {
@@ -15,17 +15,17 @@ export class DateService {
   }
 
   /**
-   * Date setting.
-   * @param form Form.
-   * @param name Field name.
-   * @param value Date.
-   * @param withTime Time conversion.
+   * Настройка даты в датапекере
+   * @param form Форма.
+   * @param name Название поля.
+   * @param value дата.
+   * @param withTime Конвертация с временем
    */
   public setDate(form: FormGroup, name: string, value?: any, withTime: boolean = false): void {
     if (!value) {
       return;
     }
-    // If there is no value, it gives the current day.
+    // При отсутствии value выдает текущий день
     form.patchValue({
       [name]: {
         date: this.getDate(value, withTime)
@@ -34,29 +34,29 @@ export class DateService {
   }
 
   /**
-   * Date conversion to readable view.
-   * @param date Date string.
-   * @param withTime Conversion versus time.
-   * @return Date in format DD.MM.YYYY
+   * Конвертация даты в читемый вид
+   * @param date Дата в виде строки
+   * @param withTime Конвертация с временем
+   * @return Дату в формате DD.MM.YYYY
    */
   public convertDate(date: string, withTime: boolean = false): string {
     return date ? moment(date).format(this.getFormat(withTime)) : null;
   }
 
   /**
-   * Generating rust object Date.
-   * @param date Date.
-   * @return Date in format UTC
+   * Генерация даты из объекта Date
+   * @param date дата.
+   * @return Дата в формате UTC
    */
   public setDateFromDateJs(date: Date): string {
     return date ? moment(date).utc().format() : '';
   }
 
   /**
-   * Amount of time to date.
-   * @param date Release date.
-   * @param value Data for the sample.
-   * @return Time (days, weeks).
+   * Количество времени до даты
+   * @param date Дата релиза
+   * @param value Данные для выборки
+   * @return Время (дни, недели)
    */
   public getTimeToDate(date: string, value: moment.unitOfTime.Diff): number {
     if (!value) {
@@ -67,8 +67,8 @@ export class DateService {
   }
 
   /**
-   * Time until midnight.
-   * @return Time.
+   * Время до полуночи
+   * @return время
    */
   public getHoursToMidnight(): number {
     const end = moment().endOf('day');
@@ -77,7 +77,7 @@ export class DateService {
   }
 
   /**
-   * Minute counter.
+   * Счетчик минут
    * @return number
    */
   public getMinutesCount(): number {
@@ -87,7 +87,7 @@ export class DateService {
   }
 
   /**
-   * Seconds counter
+   * Счетчик секунд
    * @return number
    */
   public getSecondsCount(): number {
@@ -97,7 +97,7 @@ export class DateService {
   }
 
   /**
-   * Minute / second counter.
+   * Счетчик минут / секунд
    * @return string
    */
   public getCounterTime(): string {
@@ -107,10 +107,10 @@ export class DateService {
   }
 
   /**
-   * generating date.
-   * @param date date if it is.
-   * @param withTime Time conversion.
-   * @return An object rust.
+   * Генерация даты
+   * @param date дата если она есть.
+   * @param withTime Конвертация с временем
+   * @return объект даты
    */
   private getDate(date: string, withTime: boolean): Object {
     if (date && date !== '') {
@@ -118,7 +118,7 @@ export class DateService {
 
       return {
         year: mDate.get('year'),
-        month: mDate.get('month') + 1, // Months start at 0
+        month: mDate.get('month') + 1, // Месяцы начинаются с 0
         day: mDate.get('date')
       };
     } else {
@@ -126,15 +126,15 @@ export class DateService {
 
       return {
         year: now.getFullYear(),
-        month: now.getMonth() + 1, // Months start at 0
+        month: now.getMonth() + 1, // Месяцы начинаются с 0
         day: now.getDate()
       };
     }
   }
 
   /**
-   * @param withTime Time conversion.
-   * @return Format date.
+   * @param withTime Конвертация с временем
+   * @return Формат даты
    */
   private getFormat(withTime: boolean): string {
     return `DD.MM.YYYY${(withTime ? ' HH:mm:ss' : '')}`;

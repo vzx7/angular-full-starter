@@ -10,7 +10,7 @@ export class TableTestQuestionsComponent {
   public dataSource = ELEMENT_DATA;
 }
 
-// TODO Move interface to model directory.
+// TODO Убрать интерфейс в каталог model
 export interface PeriodicElement {
   tag: string;
   question: number;
@@ -18,6 +18,7 @@ export interface PeriodicElement {
   cost: string;
 }
 
+// TODO Зачем константа вынесена из класса?
 const ELEMENT_DATA: PeriodicElement[] = [
   {question: 1, tag: 'Hydrogen', blockQuestion: 1.0079, cost: 'H'},
   {question: 2, tag: 'Helium', blockQuestion: 4.0026, cost: 'He'},

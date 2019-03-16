@@ -3,42 +3,42 @@
   <div class="button-back">
     <a mat-button routerLink="/questions">
       <i class="material-icons md-18">arrow_back_ios</i>
-      Go back
+      Назад
     </a>
   </div>
 
   <form class="form-add-test-question">
 
     <div class="form-add-test-question-item">
-      <label>Question type</label>
+      <label>Тип вопроса</label>
       <mat-form-field class="add-test-question-full-width">
         <mat-select [(value)]="selected">
-          <mat-option value="option1">Test question</mat-option>
-          <mat-option value="option2">Test tasks</mat-option>
-          <mat-option value="option3">Code task</mat-option>
+          <mat-option value="option1">Тестовый вопрос</mat-option>
+          <mat-option value="option2">Тестовое задание</mat-option>
+          <mat-option value="option3">Кодовое задание</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
     <div class="form-add-test-question-item">
-      <label class="question-label">Question</label>
+      <label class="question-label">Вопрос</label>
       <mat-form-field class="add-test-question-full-width">
         <textarea matInput></textarea>
       </mat-form-field>
     </div>
 
     <div class="form-add-test-question-item double-height">
-      <label class="double-label">Answer Options</label>
+      <label class="double-label">Варианты ответа</label>
       <mat-form-field class="add-test-question-full-width">
-        <input matInput placeholder="1 option" value="" />
+        <input matInput placeholder="1 вариант" value="" />
       </mat-form-field>
       <mat-form-field class="add-test-question-full-width">
-        <input matInput placeholder="2 option" value="" />
+        <input matInput placeholder="2 вариант" value="" />
       </mat-form-field>
     </div>
 
     <div class="form-add-test-question-item">
-      <label class="question-label">Evaluation</label>
+      <label class="question-label">Оценка</label>
       <mat-form-field class="add-test-question-full-width">
         <mat-select [(value)]="selected">
           <mat-option value="option1">100%</mat-option>
@@ -49,33 +49,52 @@
     </div>
 
     <div class="form-add-test-question-item double-height">
-      <label class="double-label">Tags</label>
+      <label class="double-label">Теги</label>
       <mat-form-field class="add-test-question-full-width">
         <mat-select [(value)]="selected">
-          <mat-option value="option1">Tag1</mat-option>
-          <mat-option value="option2">Tag2</mat-option>
-          <mat-option value="option3">Tag3</mat-option>
+          <mat-option value="option1">Тег1</mat-option>
+          <mat-option value="option2">Тег2</mat-option>
+          <mat-option value="option3">Тег3</mat-option>
         </mat-select>
       </mat-form-field>
 
       <mat-form-field class="add-test-question-full-width">
         <mat-select [(value)]="selected">
-            <mat-option value="option1">Tag1</mat-option>
-            <mat-option value="option2">Tag2</mat-option>
-            <mat-option value="option3">Tag3</mat-option>
+          <mat-option value="option1">Тег1</mat-option>
+          <mat-option value="option2">Тег2</mat-option>
+          <mat-option value="option3">Тег3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-add-test-question-item double-height">
+      <label class="double-label">Блокирующие вопросы</label>
+      <mat-form-field class="add-test-question-full-width">
+        <mat-select [(value)]="selected">
+          <mat-option value="option1">Вопрос1</mat-option>
+          <mat-option value="option2">Вопрос2</mat-option>
+          <mat-option value="option3">Вопрос3</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="add-test-question-full-width">
+        <mat-select [(value)]="selected">
+          <mat-option value="option1">Вопрос1</mat-option>
+          <mat-option value="option2">Вопрос2</mat-option>
+          <mat-option value="option3">Вопрос3</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
     <div class="form-add-test-question-item">
-      <label class="question-label">Cost of issue</label>
+      <label class="question-label">Стоимость вопроса</label>
       <mat-form-field class="add-test-question-full-width">
         <input matInput type="text" value="" />
       </mat-form-field>
     </div>
 
     <mat-card-actions class="button-add">
-      <button mat-raised-button color="primary">Add</button>
+      <button mat-raised-button color="primary">Добавить</button>
     </mat-card-actions>
 
   </form>

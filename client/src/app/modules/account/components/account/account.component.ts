@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { AccountService } from '../../services/account.service';
 
 /**
- * Component of the personal account.
+ * Компонент личного кабинета.
  */
 @Component({
   selector: 'app-account',
@@ -20,26 +20,26 @@ import { AccountService } from '../../services/account.service';
 export class AccountComponent implements OnInit {
 
   /**
-   * Form
+   * Форма
    */
   public form: FormGroup;
 
   /**
-   * Displaying the content loading process.
+   * Показ загрузки
    */
   public isLoading: boolean;
 
   /**
-   * User
+   * Пользователь
    */
   public user: User;
 
   /**
-   * constructor
-   * @param accountService accountService
-   * @param fb Form Builder
-   * @param formService Form Service
-   * @param router Router
+   * Конструктор
+   * @param accountService Сервис для личного кабинета
+   * @param fb Построитель форм
+   * @param formService Маршрутизатор
+   * @param router Маршрутизатор
    * @param snackBar Snack-bar
    */
   constructor(
@@ -51,7 +51,7 @@ export class AccountComponent implements OnInit {
   ) { }
 
   /**
-   * Component initialization hook.
+   * Хук инициализации компонента
    */
   public ngOnInit() {
     this.initForm();
@@ -59,7 +59,7 @@ export class AccountComponent implements OnInit {
   }
 
   /**
-   * Save
+   * Сохранение
    */
   public onSave() {
     if (this.formService.validateForm(this.form)) {
@@ -67,14 +67,14 @@ export class AccountComponent implements OnInit {
       this.form.value.id = this.user.id;
       const updateUser = Object.assign(this.user, this.form.value);
       this.accountService.updateUser(updateUser as User, () => {}).subscribe(() => {
-        this.openSnackBar('Data saved successfully!', '');
+        this.openSnackBar('Данные успешно сохранены!', '');
       });
       this.isLoading = false;
     }
   }
 
   /**
-   * Receiving user data.
+   * Получение данных пользователя
    */
   public getUser() {
     this.accountService.getUser('1', () => {}).subscribe((user) => {
@@ -84,8 +84,8 @@ export class AccountComponent implements OnInit {
   }
 
   /**
-   * Error message when entering incorrect value.
-   * @param control Input
+   * Появление сообщения об ошибке при вводе некорректного значения
+   * @param control Поле ввода
    * @return boolean
    */
   public isError(control: string): boolean {
@@ -93,7 +93,7 @@ export class AccountComponent implements OnInit {
   }
 
   /**
-   * Form init
+   * Инициализация формы
    */
   private initForm(): any {
     this.form = this.fb.group({
@@ -116,9 +116,9 @@ export class AccountComponent implements OnInit {
   }
 
   /**
-   * Action Notification.
-   * @param message Message
-   * @param action Action
+   * Оповещение о выполнении действия
+   * @param message Сообщение
+   * @param action Действие
    */
   private openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {

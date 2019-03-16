@@ -1,13 +1,13 @@
 /**
- * Data model for the table.
+ * Модель данных для таблицы
  */
 export interface TableColumn {
   /**
-   * field.
+   * Ключ
    */
   field: string;
   /**
-   * header.
+   * Значение.
    */
   header: string;
 }

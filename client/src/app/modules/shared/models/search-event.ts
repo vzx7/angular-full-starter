@@ -1,13 +1,13 @@
 /**
- * Search data model.
+ * Модель данных для поиска
  */
 export interface SearchEvent {
   /**
-   * Evtnt
+   * Событие
    */
   event: any;
   /**
-   * Search value.
+   * Поисковое значение
    */
   query: string;
 }

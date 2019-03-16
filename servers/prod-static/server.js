@@ -4,7 +4,7 @@ let app = express();
 let path = require('path');
 let settings = {
   port: 8384,
-  basePath: path.join(__dirname, '../../dist/client')
+  basePath: path.join(__dirname, '../public')
 }
 app.use(compression({
   level: 8,
@@ -25,5 +25,5 @@ app.get('*', (req, res) => {
 });
 
 app.listen(settings.port, function () {
-  console.log("Production static server run now at port " + settings.port);
+  console.log("Production server run now at port " + settings.port);
 });
