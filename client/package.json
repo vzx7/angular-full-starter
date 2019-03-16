@@ -12,12 +12,6 @@
     "bundle-report": "webpack-bundle-analyzer dist/is/stats.json",
     "docs": "compodoc -p tsconfig.json -s"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "pre-push": "npm run build:prod"
-    }
-  },
   "private": true,
   "dependencies": {
     "@angular/animations": "^7.0.4",
