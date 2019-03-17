@@ -1,3 +1,5 @@
+const path = require('path');
+
 const fs = require('fs');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
@@ -20,7 +22,7 @@ async function createVersionsFile(filename: string) {
         branch: '${branch}'
       };\n`;
 
-  fs.writeFileSync(filename, content, {encoding: 'utf8'});
+  fs.writeFileSync(filename, content, { encoding: 'utf8' });
 }
 
-createVersionsFile('versions.ts');
+createVersionsFile(path.join(__dirname, '/src/environments/versions.ts'));
