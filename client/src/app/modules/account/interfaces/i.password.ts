@@ -1,7 +1,7 @@
 /**
  * Password data model
  */
-export interface Password {
+export interface IPassword {
   /**
    * Current password.
    */

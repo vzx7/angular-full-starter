@@ -1,5 +1,5 @@
-import { Password } from 'modules/account/models/password';
-import { User } from 'modules/account/models/user';
+import { IPassword } from 'modules/account/interfaces/i.password';
+import { IUser } from 'modules/account/interfaces/i.user';
 import { FormService } from 'modules/shared/services/form/form.service';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -35,7 +35,7 @@ export class AccountPasswordComponent implements OnInit {
   /**
    * User.
    */
-  public user: User;
+  public user: IUser;
 
   /**
    * Check for a match between entering the current password and the user password.
@@ -85,7 +85,7 @@ export class AccountPasswordComponent implements OnInit {
       if (this.formService.validateForm(this.form)) {
         if (this.form.value.newPassword === this.form.value.repeatNewPassword) {
           this.isLoading = true;
-          this.accountService.changePassword(this.form.value as Password, this.user, () => {}).subscribe(() => {
+          this.accountService.changePassword(this.form.value as IPassword, this.user, () => {}).subscribe(() => {
             this.ngForm.resetForm();
             this.openSnackBar('Password successfully updated!', '');
           });
@@ -99,9 +99,9 @@ export class AccountPasswordComponent implements OnInit {
    * Receiving user data.
    */
   public getUser() {
-    this.accountService.getUser('1', () => {}).subscribe((user) => {
+/*     this.accountService.getUser('1', () => {}).subscribe((user) => {
       this.user = user;
-    });
+    }); */
   }
 
   /**

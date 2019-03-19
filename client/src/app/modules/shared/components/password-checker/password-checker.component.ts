@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { PasswordStrength } from '../../models/password-strength';
+import { IPasswordStrength } from '../../interfaces/i.password-strength';
 
 /**
  * Password validation display component.
@@ -12,7 +12,7 @@ import { PasswordStrength } from '../../models/password-strength';
 })
 export class PasswordCheckerComponent {
 
-  public passwordStrength: PasswordStrength;
+  public passwordStrength: IPasswordStrength;
 
   constructor() {  }
 
@@ -23,7 +23,7 @@ export class PasswordCheckerComponent {
   @Input('password') set password(value: string) {
     const passwordLength = 8;
 
-    this.passwordStrength = <PasswordStrength>{
+    this.passwordStrength = <IPasswordStrength>{
       length: value.length >= passwordLength,
       digits: (new RegExp('[0-9]')).test(value),
       capital: (new RegExp('[A-Z]')).test(value),

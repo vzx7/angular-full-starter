@@ -1,7 +1,7 @@
 /**
  * Password recovery data model.
  */
-export interface PasswordRecovery {
+export interface IPasswordRecovery {
   /**
    * Password hashed.
    */

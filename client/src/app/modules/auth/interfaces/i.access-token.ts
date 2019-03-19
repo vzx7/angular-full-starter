@@ -1,6 +1,6 @@
 /**
  * Data model for token
  */
-export interface AccessToken {
+export interface IAccessToken {
   access_token: string;
 }

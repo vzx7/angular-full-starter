@@ -1,16 +1,8 @@
+import { IAccountConfig } from '../account/interfaces/i.account-config';
 /**
  * Settings account module.
  */
-interface AccountConfig {
-  // Api
-  api: {
-    read: string;
-    update: string;
-    updatePassword: string
-  };
-}
-
-export const accountConfig: AccountConfig = {
+export default <IAccountConfig>{
   api: {
     read: 'read_user',
     update: 'update_user',

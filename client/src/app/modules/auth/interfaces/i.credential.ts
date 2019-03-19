@@ -1,7 +1,7 @@
 /**
  * Login Data Model
  */
-export interface Credential {
+export interface ICredential {
   /**
    * Login.
    */
@@ -13,7 +13,7 @@ export interface Credential {
   password: string;
 
   /**
-   * Patronymic.
+   * Remember me.
    */
   rememberMe: boolean;
 }

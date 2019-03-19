@@ -1,12 +1,13 @@
-import { User } from 'modules/account/models/user';
 import { FormService } from 'modules/shared/services/form/form.service';
 
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
 import { AccountService } from '../../services/account.service';
+import { User } from 'modules/account/models/user.model';
+import { IUser } from 'modules/account/interfaces/i.user';
 
 /**
  * Component of the personal account.
@@ -18,11 +19,15 @@ import { AccountService } from '../../services/account.service';
 })
 
 export class AccountComponent implements OnInit {
-
   /**
    * Form
    */
-  public form: FormGroup;
+  @ViewChild('form') public form: NgForm;
+
+  /**
+   * Repeat password
+   */
+  @ViewChild('repeatPasswd') public repeatPasswd: string;
 
   /**
    * Displaying the content loading process.
@@ -33,6 +38,16 @@ export class AccountComponent implements OnInit {
    * User
    */
   public user: User;
+
+  /**
+   * Is true password
+   */
+  public isTruePassword: boolean;
+
+  /**
+   * Is the password repeated correctly?
+   */
+  public isRepeatPassword: boolean;
 
   /**
    * constructor
@@ -48,13 +63,14 @@ export class AccountComponent implements OnInit {
     private readonly formService: FormService,
     private readonly router: Router,
     private readonly snackBar: MatSnackBar
-  ) { }
+  ) {
+    this.user = new User();
+  }
 
   /**
    * Component initialization hook.
    */
   public ngOnInit() {
-    this.initForm();
     this.getUser();
   }
 
@@ -62,14 +78,14 @@ export class AccountComponent implements OnInit {
    * Save
    */
   public onSave() {
-    if (this.formService.validateForm(this.form)) {
+    if (this.form.valid) {
       this.isLoading = true;
-      this.form.value.id = this.user.id;
-      const updateUser = Object.assign(this.user, this.form.value);
-      this.accountService.updateUser(updateUser as User, () => {}).subscribe(() => {
-        this.openSnackBar('Data saved successfully!', '');
-      });
-      this.isLoading = false;
+      this.accountService.createUser(this.user)
+        .subscribe((user: IUser) => {
+          this.openSnackBar('Congratulations!', `User ${user.firstName} saved successfully!`);
+          this.isLoading = false;
+        });
+
     }
   }
 
@@ -77,42 +93,16 @@ export class AccountComponent implements OnInit {
    * Receiving user data.
    */
   public getUser() {
-    this.accountService.getUser('1', () => {}).subscribe((user) => {
-      this.form.patchValue(user);
-      this.user = user;
-    });
+    /*     this.accountService.getUser('1', () => {}).subscribe((user) => {
+          this.form.patchValue(user);
+          this.user = user;
+        }); */
   }
 
-  /**
-   * Error message when entering incorrect value.
-   * @param control Input
-   * @return boolean
-   */
-  public isError(control: string): boolean {
-    return (!this.form.controls[control].valid);
-  }
+  public testPassword(password: string): boolean {
+    console.log(this.user.password === password);
 
-  /**
-   * Form init
-   */
-  private initForm(): any {
-    this.form = this.fb.group({
-      lastName: new FormControl('', [Validators.required,
-        Validators.pattern(this.formService.nonWhiteSpaceRegexp),
-        Validators.maxLength(this.formService.maxLength)]),
-      firstName: new FormControl('', [Validators.required,
-        Validators.pattern(this.formService.nonWhiteSpaceRegexp),
-        Validators.maxLength(this.formService.maxLength)]),
-      patronymic: new FormControl('', [Validators.required,
-        Validators.pattern(this.formService.nonWhiteSpaceRegexp),
-        Validators.maxLength(this.formService.maxLength)]),
-      login: new FormControl([], [Validators.required,
-        Validators.maxLength(this.formService.maxLength)]),
-      email: new FormControl('', [Validators.required,
-        Validators.email,
-        Validators.pattern(this.formService.nonWhiteSpaceRegexp),
-        Validators.maxLength(this.formService.maxLength)])
-    });
+    return this.user.password === password;
   }
 
   /**
@@ -122,7 +112,7 @@ export class AccountComponent implements OnInit {
    */
   private openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 1000,
+      duration: 3000,
     });
   }
 }

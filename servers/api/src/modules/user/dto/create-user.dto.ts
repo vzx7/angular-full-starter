@@ -3,7 +3,6 @@ export class CreateUserDto {
   public firstName: string;
   public lastName: string;
   public email: string;
-  public username: string;
+  public login: string;
   public password: string;
-  public createdAt: Date;
 }

@@ -1,7 +1,7 @@
 /**
  * Search data model.
  */
-export interface SearchEvent {
+export interface ISearchEvent {
   /**
    * Evtnt
    */

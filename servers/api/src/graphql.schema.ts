@@ -3,8 +3,8 @@ export class CreateUserInput {
     firstName: string;
     lastName: string;
     email: string;
-    username: string;
-    roleName?: string;
+    login: string;
+    password: string;
 }
 
 export class UpdateUseInput {
@@ -12,7 +12,7 @@ export class UpdateUseInput {
     firstName: string;
     lastName: string;
     email: string;
-    username: string;
+    login: string;
     roleName: string;
 }
 
@@ -25,7 +25,7 @@ export abstract class IMutation {
 
     abstract signIn(login: string, password: string): Token | Promise<Token>;
 
-    abstract signUp(firstName: string, lastName: string, email: string, username: string, password: string): Token | Promise<Token>;
+    abstract signUp(firstName: string, lastName: string, email: string, login: string, password: string): Token | Promise<Token>;
 
     abstract createUser(createUserInput?: CreateUserInput): User | Promise<User>;
 
@@ -63,7 +63,7 @@ export class User {
     id: string;
     firstName: string;
     lastName: string;
-    username?: string;
+    login?: string;
     email: string;
     role: Role;
     createdAt: string;

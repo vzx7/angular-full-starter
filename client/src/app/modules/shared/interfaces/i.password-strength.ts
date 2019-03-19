@@ -1,7 +1,7 @@
 /**
  * Password strength data model.
  */
-export interface PasswordStrength {
+export interface IPasswordStrength {
   /**
    * Length more than 8 characters.
    */

@@ -1,7 +1,7 @@
 /**
  * User data model.
  */
-export interface User {
+export interface IUser {
   /**
    * Name.
    */
@@ -13,9 +13,9 @@ export interface User {
   lastName: string;
 
   /**
-   * Patronymic.
+   * Login.
    */
-  patronymic: string;
+  login: string;
 
   /**
    * E-mail.

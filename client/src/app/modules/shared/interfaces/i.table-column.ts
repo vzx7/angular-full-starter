@@ -1,7 +1,7 @@
 /**
  * Data model for the table.
  */
-export interface TableColumn {
+export interface ITableColumn {
   /**
    * field.
    */

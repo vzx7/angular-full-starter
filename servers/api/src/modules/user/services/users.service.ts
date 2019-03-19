@@ -6,6 +6,7 @@ import { JwtPayload } from '../../auth/models/jwt-payload.interface';
 import { CreateUpdateUserDto } from '../dto/create-update-user.dto';
 import { UserDto } from '../dto/user.dto';
 import { User } from '../models/user.interface';
+import { SignUpUserDto } from '../dto/sign-up-user.dto';
 
 @Injectable()
 export class UsersService {
@@ -32,7 +33,7 @@ export class UsersService {
       return this.findOneById(payload.id);
     } */
 
-  async read(username: string) {
+  async read(login: string) {
 
     return [];
   }
@@ -43,8 +44,8 @@ export class UsersService {
   }
 
   async signUp(data: /* SignUpUserDto */ any) {
-
-    return [];
+    console.log(data);
+    return 'jkhkjlhlkjhlkjh';
   }
 
   async updateUser(data: /* CreateUpdateUserDto */ any) {

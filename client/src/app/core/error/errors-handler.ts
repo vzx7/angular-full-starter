@@ -51,5 +51,4 @@ export class ErrorsHandler implements ErrorHandler {
     }
     toastService.showError(toUser);
   }
-
 }

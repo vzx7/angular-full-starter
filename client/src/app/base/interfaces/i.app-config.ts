@@ -1,7 +1,7 @@
 /**
  * Settings model of app.
  */
-export interface AppConfig {
+export interface IAppConfig {
     // api
     api: {
       worker: string;

@@ -1,7 +1,7 @@
 /**
  * Base class for dictionaries.
  */
-export interface BaseDictionary {
+export interface IBaseDictionary {
   /**
    * Id.
    */

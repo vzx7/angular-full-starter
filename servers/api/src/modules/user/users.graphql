@@ -11,7 +11,7 @@ type Mutation {
     firstName: String!
     lastName: String!
     email: String!
-    username: String!
+    login: String!
     password: String!
   ): Token!
 
@@ -30,7 +30,7 @@ type User {
   id: ID!
   firstName: String!
   lastName: String!
-  username: String
+  login: String
   email: String!
   role: Role!
   createdAt: String!
@@ -41,8 +41,8 @@ input CreateUserInput {
   firstName: String!
   lastName: String!
   email: String!
-  username: String!
-  roleName: String
+  login: String!
+  password: String!
 }
 
 input UpdateUseInput {
@@ -50,6 +50,6 @@ input UpdateUseInput {
   firstName: String!
   lastName: String!
   email: String!
-  username: String!
+  login: String!
   roleName: String!
 }

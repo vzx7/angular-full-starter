@@ -9,7 +9,6 @@ import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 
 @Resolver('User')
-@UseGuards(RolesGuard)
 export class UsersResolvers {
   constructor(private readonly usersService: UsersService) {}
 
@@ -33,8 +32,8 @@ export class UsersResolvers {
   }
 
   @Mutation('createUser')
-  @Roles('ADMIN')
-  @UseGuards(new AuthGuard())
+/*   @Roles('ADMIN')
+  @UseGuards(new AuthGuard()) */
   async createUser(
     @Args('createUserInput') args: CreateUpdateUserDto,
   ): Promise<UserDto> {
@@ -43,8 +42,8 @@ export class UsersResolvers {
   }
 
   @Mutation('updateUser')
-  @Roles('ADMIN')
-  @UseGuards(new AuthGuard())
+/*   @Roles('ADMIN')
+  @UseGuards(new AuthGuard()) */
   async updateUser(
     @Args('updateUserInput') args: CreateUpdateUserDto,
   ): Promise<UserDto> {
@@ -57,5 +56,11 @@ export class UsersResolvers {
   @UseGuards(new AuthGuard())
   async deleteUser(@Args('id') id: string): Promise<boolean> {
     return await this.usersService.deleteUser(id);
+  }
+
+  @Mutation('signUp')
+  async signUp(@Args('signUp') args: CreateUpdateUserDto): Promise<string> {
+    console.log(args);
+    return await this.usersService.signUp(args);
   }
 }
