@@ -1,0 +1,52 @@
+<app-head></app-head>
+<div class="container">
+
+    <mat-card class="card-foto">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+            alt="Photo of a Shiba Inu" />
+        <mat-card-actions class="card-button">
+            <button mat-raised-button color="primary">Change photo</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <form #form="ngForm" class="form-account" (ngSubmit)="onSave()">
+        <mat-form-field class="account-full-width">
+            <input matInput type="text" placeholder="Name" name="firstName" [(ngModel)]="user.firstName" required
+                #firstName="ngModel" />
+            <mat-error *ngIf="firstName.pristine && !firstName.valid">
+                The name is a required field!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="account-full-width">
+            <input matInput type="text" placeholder="Last Name" name="lastName" [(ngModel)]="user.lastName" required
+                #lastName="ngModel" />
+            <mat-error *ngIf="lastName.pristine && !lastName.valid">
+                Last name is a required field!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="account-full-width">
+            <input matInput type="text" placeholder="Login" name="login" [(ngModel)]="user.login" required
+                #login="ngModel" />
+            <mat-error *ngIf="login.pristine && !login.valid">
+                Login is a required field!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="account-full-width">
+            <input matInput type="text" placeholder="E-mail" name="email" [(ngModel)]="user.email" required
+                #email="ngModel" />
+            <mat-error *ngIf="email.pristine && !email.valid">
+                Email is a required field!
+            </mat-error>
+        </mat-form-field>
+
+        <mat-card-actions class="button-save">
+            <button mat-raised-button color="primary" type="submit" [disabled]="isLoading || !form.valid">
+                Save
+            </button>
+        </mat-card-actions>
+    </form>
+    <app-account-password></app-account-password>
+</div>

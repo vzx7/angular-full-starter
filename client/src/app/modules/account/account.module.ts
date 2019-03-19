@@ -14,11 +14,16 @@ import { AccountRoutingModule } from './account-routing.module';
 import { AccountPasswordComponent } from './components/account-password/account-password.component';
 import { AccountComponent } from './components/account/account.component';
 import { AccountService } from './services/account.service';
+import { CreateAccountComponent } from './components/create-account/create-account.component';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AccountComponent,
-    AccountPasswordComponent
+    AccountPasswordComponent,
+    CreateAccountComponent,
+    EditAccountComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +36,8 @@ import { AccountService } from './services/account.service';
     MatCardModule,
     FormsModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule
   ],
   providers: [
     AccountService

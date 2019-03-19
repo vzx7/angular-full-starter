@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+/**
+ * Shared head
+ */
 @Component({
   selector: 'app-head',
   templateUrl: './head.component.html',
@@ -9,7 +11,5 @@ export class HeadComponent implements OnInit {
 
   constructor() { }
 
-  public ngOnInit() {
-  }
-
+  public ngOnInit() {  }
 }

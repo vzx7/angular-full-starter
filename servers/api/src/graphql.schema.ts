@@ -7,13 +7,12 @@ export class CreateUserInput {
     password: string;
 }
 
-export class UpdateUseInput {
+export class UpdateUserInput {
     id: string;
     firstName: string;
     lastName: string;
     email: string;
     login: string;
-    roleName: string;
 }
 
 export abstract class IMutation {
@@ -29,7 +28,7 @@ export abstract class IMutation {
 
     abstract createUser(createUserInput?: CreateUserInput): User | Promise<User>;
 
-    abstract updateUser(updateUserInput?: UpdateUseInput): User | Promise<User>;
+    abstract updateUser(updateUserInput?: UpdateUserInput): User | Promise<User>;
 
     abstract deleteUser(id: string): boolean | Promise<boolean>;
 }

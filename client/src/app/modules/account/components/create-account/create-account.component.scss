@@ -1,0 +1,27 @@
+.container {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .container__title {
+        text-align: center;
+    }
+
+    .form-account {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 50px;
+
+      .account-full-width {
+        width: 100%;
+      }
+
+      .button-save {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }

@@ -1,37 +1,16 @@
 .container {
-  display: flex;
+  display: contents;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 10px;
   margin-bottom: 50px;
 
-  .card-foto {
-    max-width: 300px;
-    margin: 0 50px;
+  .module {
+    cursor: pointer;
+    background-color: aquamarine;
 
-    .card-button {
-      padding-top: 0;
-      text-align: center;
-    }
-
-    .card-header {
-      justify-content: center;
-    }
-  }
-
-  .form-account {
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    margin: 0 50px;
-
-    .account-full-width {
-      width: 100%;
-    }
-
-    .button-save {
-      display: flex;
-      justify-content: center;
+    &:hover {
+        opacity: 0.8;
     }
   }
 }

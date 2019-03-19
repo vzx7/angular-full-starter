@@ -17,7 +17,7 @@ type Mutation {
 
   createUser(createUserInput: CreateUserInput): User!
 
-  updateUser(updateUserInput: UpdateUseInput): User!
+  updateUser(updateUserInput: UpdateUserInput): User!
 
   deleteUser(id: ID!): Boolean
 }
@@ -45,11 +45,10 @@ input CreateUserInput {
   password: String!
 }
 
-input UpdateUseInput {
+input UpdateUserInput {
   id: ID!
   firstName: String!
   lastName: String!
   email: String!
   login: String!
-  roleName: String!
 }

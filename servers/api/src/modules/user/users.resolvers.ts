@@ -4,9 +4,10 @@ import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { Roles } from '../../decorators/roles.decorators';
 import { AuthGuard } from '../auth/guards/auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
-import { CreateUpdateUserDto } from './dto/create-update-user.dto';
+import { UpdateUserDto } from './dto/update-user.dto';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Resolver('User')
 export class UsersResolvers {
@@ -32,10 +33,11 @@ export class UsersResolvers {
   }
 
   @Mutation('createUser')
+  @Roles('ADMIN')
 /*   @Roles('ADMIN')
   @UseGuards(new AuthGuard()) */
   async createUser(
-    @Args('createUserInput') args: CreateUpdateUserDto,
+    @Args('createUserInput') args: CreateUserDto,
   ): Promise<UserDto> {
     const createdUser = await this.usersService.createUser(args);
     return createdUser;
@@ -45,7 +47,7 @@ export class UsersResolvers {
 /*   @Roles('ADMIN')
   @UseGuards(new AuthGuard()) */
   async updateUser(
-    @Args('updateUserInput') args: CreateUpdateUserDto,
+    @Args('updateUserInput') args: UpdateUserDto,
   ): Promise<UserDto> {
     const updatedUser = await this.usersService.updateUser(args);
     return updatedUser;
@@ -59,7 +61,7 @@ export class UsersResolvers {
   }
 
   @Mutation('signUp')
-  async signUp(@Args('signUp') args: CreateUpdateUserDto): Promise<string> {
+  async signUp(@Args('signUp') args: UpdateUserDto): Promise<string> {
     console.log(args);
     return await this.usersService.signUp(args);
   }
