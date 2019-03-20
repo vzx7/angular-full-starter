@@ -1,30 +1,13 @@
-import { IsEmail, IsNotEmpty } from 'class-validator';
-import { UpdateUserInput } from 'graphql.schema';
+import { IsNotEmpty } from 'class-validator';
 import { Field, InputType, ID } from 'type-graphql';
+import { BaseUserDto } from './base-user.dto';
 
 /**
  * DTO for Update User
  */
 @InputType()
-export class UpdateUserDto extends UpdateUserInput {
+export class UpdateUserDto extends BaseUserDto {
   @Field(type => ID)
   @IsNotEmpty()
   id: string;
-
-  @Field()
-  @IsNotEmpty()
-  firstName: string;
-
-  @Field()
-  @IsNotEmpty()
-  lastName: string;
-
-  @Field()
-  @IsNotEmpty()
-  @IsEmail()
-  email: string;
-
-  @Field()
-  @IsNotEmpty()
-  login: string;
 }

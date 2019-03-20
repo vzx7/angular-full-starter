@@ -8,6 +8,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { User } from './models/user.interface';
 
 @Resolver('User')
 export class UsersResolvers {
@@ -15,13 +16,13 @@ export class UsersResolvers {
 
   // TODO pagination cursor instead of page???
   @Query('users')
-  @Roles('ADMIN')
-  @UseGuards(new AuthGuard())
+/*   @Roles('ADMIN')
+  @UseGuards(new AuthGuard()) */
   async getUsers(
     @Args('page') page: number,
     @Args('limit') limit: number,
     @Args('newest') newest: boolean,
-  ): Promise<UserDto[]> {
+  ): Promise<User[]> {
     return await this.usersService.findAll();
   }
 
@@ -33,7 +34,6 @@ export class UsersResolvers {
   }
 
   @Mutation('createUser')
-  @Roles('ADMIN')
 /*   @Roles('ADMIN')
   @UseGuards(new AuthGuard()) */
   async createUser(

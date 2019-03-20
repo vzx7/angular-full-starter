@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AccountService } from './account.service';
+import { UsersService } from './users.service';
 
-describe('AccountService', () => {
+describe('UsersService', () => {
   // beforeEach(() => TestBed.configureTestingModule({}));
 
   // it('should be created', () => {

@@ -5,9 +5,9 @@ import { FormBuilder, NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
-import { AccountService } from '../../services/account.service';
-import { User } from 'modules/account/models/user.model';
-import { IUser } from 'modules/account/interfaces/i.user';
+import { UsersService } from '../../services/users.service';
+import { User } from 'modules/users/models/user.model';
+import { IUser } from 'modules/users/interfaces/i.user';
 
 /**
  * Component of the personal account.
@@ -36,14 +36,14 @@ export class CreateAccountComponent implements OnInit {
 
   /**
    * constructor
-   * @param accountService accountService
+   * @param usersService usersService
    * @param fb Form Builder
    * @param formService Form Service
    * @param router Router
    * @param snackBar Snack-bar
    */
   constructor(
-    private readonly accountService: AccountService,
+    private readonly usersService: UsersService,
     private readonly fb: FormBuilder,
     private readonly formService: FormService,
     private readonly router: Router,
@@ -63,7 +63,7 @@ export class CreateAccountComponent implements OnInit {
   public onSave() {
     if (this.form.valid) {
       this.isLoading = true;
-      this.accountService.createUser(this.user)
+      this.usersService.createUser(this.user)
         .subscribe((user: IUser) => {
           this.openSnackBar('Congratulations!', `User ${user.firstName} saved successfully!`);
           this.isLoading = false;

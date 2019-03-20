@@ -5,6 +5,7 @@ import { LoggedGuard } from '../../core/services/guards/logged/logged.guard';
 import { AccountComponent } from './components/account/account.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: 'edit', component: EditAccountComponent,
+  },
+  {
+    path: 'all', component: UsersComponent,
   }
 ];
 
@@ -22,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AccountRoutingModule { }
+export class UsersRoutingModule { }

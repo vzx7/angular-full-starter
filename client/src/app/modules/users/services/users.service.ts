@@ -6,10 +6,10 @@ import { catchError, map } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 
-import accountConfig from '../account.configs';
+import accountConfig from '../users.configs';
 import {
     createUser, deleteUser, queryUser, queryUsers, updateUser
-} from '../account.gql.constants';
+} from '../users.gql.constants';
 import { IPassword } from '../interfaces/i.password';
 import { IQueryUser } from '../interfaces/i.query-user';
 import { IQueryUsers } from '../interfaces/i.query-users';
@@ -17,10 +17,10 @@ import { IUser } from '../interfaces/i.user';
 import { User } from '../models/user.model';
 
 /**
- * Service for personal account.
+ * Service for users.
  */
 @Injectable()
-export class AccountService {
+export class UsersService {
 
   /**
    * Constructor
@@ -133,6 +133,6 @@ export class AccountService {
    * @return Password
    */
   public changePassword(password: IPassword, user: User, complete: Function): Observable<User> {
-    return this.requestService.put(`${accountConfig.api.updatePassword}/${user.id}`, password, complete);
+    return this.requestService.put(`${accountConfig.api.updatePassword}/${user._id}`, password, complete);
   }
 }

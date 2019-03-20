@@ -16,13 +16,12 @@ export class UsersService {
 
   async createUser(data: CreateUserDto) {
     const createdUser = new this.userModel(data);
-
     return await createdUser.save();
   }
 
   async findAll(page: number = 1, limit: number = 20, newest: boolean = true) {
 
-    return [];
+    return await this.userModel.find().exec();
   }
 
   async findOneById(id: string) {

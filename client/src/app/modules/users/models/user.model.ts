@@ -1,7 +1,8 @@
 import { IUser } from '../interfaces/i.user';
 
 export class User implements IUser {
-  public id?: string;
+// tslint:disable-next-line: variable-name
+  public _id?: string;
   public firstName: string;
   public lastName: string;
   public login: string;

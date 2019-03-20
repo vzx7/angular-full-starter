@@ -1,4 +1,4 @@
-import { IAccountConfig } from '../account/interfaces/i.account-config';
+import { IAccountConfig } from './interfaces/i.account-config';
 /**
  * Settings account module.
  */

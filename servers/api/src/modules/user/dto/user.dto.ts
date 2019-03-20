@@ -1,3 +1,6 @@
+/**
+ * DTO for User
+ */
 export class UserDto {
   id?: string;
   firstName: string;
@@ -5,6 +8,5 @@ export class UserDto {
   login: string;
   email: string;
   token?: string;
-  // TODO Нужен тип
-  role?: any;
+  role?: number;
 }

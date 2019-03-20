@@ -1,5 +1,5 @@
-import { IPassword } from 'modules/account/interfaces/i.password';
-import { IUser } from 'modules/account/interfaces/i.user';
+import { IPassword } from 'modules/users/interfaces/i.password';
+import { IUser } from 'modules/users/interfaces/i.user';
 import { FormService } from 'modules/shared/services/form/form.service';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
@@ -7,7 +7,7 @@ import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angula
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
-import { AccountService } from '../../services/account.service';
+import { UsersService } from '../../services/users.service';
 
 /**
  * The component of the password change form in the personal account.
@@ -49,14 +49,14 @@ export class AccountPasswordComponent implements OnInit {
 
   /**
    * Constructor
-   * @param accountService accountService
+   * @param usersService usersService
    * @param fb Form Builder
    * @param formService Form Service
    * @param router Router
    * @param snackBar Snack-bar
    */
   constructor(
-    private readonly accountService: AccountService,
+    private readonly usersService: UsersService,
     private readonly fb: FormBuilder,
     public readonly formService: FormService,
     public readonly router: Router,
@@ -85,7 +85,7 @@ export class AccountPasswordComponent implements OnInit {
       if (this.formService.validateForm(this.form)) {
         if (this.form.value.newPassword === this.form.value.repeatNewPassword) {
           this.isLoading = true;
-          this.accountService.changePassword(this.form.value as IPassword, this.user, () => {}).subscribe(() => {
+          this.usersService.changePassword(this.form.value as IPassword, this.user, () => {}).subscribe(() => {
             this.ngForm.resetForm();
             this.openSnackBar('Password successfully updated!', '');
           });

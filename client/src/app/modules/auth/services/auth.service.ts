@@ -12,8 +12,8 @@ import { IEmailRecovery } from '../interfaces/i.email-recovery';
 import { IPasswordRecovery } from '../interfaces/i.password-recovery';
 import { IUser } from '../interfaces/i.user';
 import { Apollo } from 'apollo-angular';
-import { ISignUpContext } from 'modules/account/interfaces/i.sign-up-context';
-import { ICredentials } from 'modules/account/interfaces/i.credential';
+import { ISignUpContext } from 'modules/users/interfaces/i.sign-up-context';
+import { ICredentials } from 'modules/users/interfaces/i.credential';
 import { signUp } from '../auth.gql.constans';
 import { handleError } from 'core/utils/handle-error';
 
