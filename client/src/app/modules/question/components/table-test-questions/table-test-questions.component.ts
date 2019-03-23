@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPeriodicElement } from 'modules/question/interfaces/i.periodic-element';
 
 @Component({
   selector: 'app-table-test-questions',
@@ -10,15 +11,7 @@ export class TableTestQuestionsComponent {
   public dataSource = ELEMENT_DATA;
 }
 
-// TODO Move interface to model directory.
-export interface PeriodicElement {
-  tag: string;
-  question: number;
-  blockQuestion: number;
-  cost: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
+const ELEMENT_DATA: IPeriodicElement[] = [
   {question: 1, tag: 'Hydrogen', blockQuestion: 1.0079, cost: 'H'},
   {question: 2, tag: 'Helium', blockQuestion: 4.0026, cost: 'He'},
   {question: 3, tag: 'Lithium', blockQuestion: 6.941, cost: 'Li'},

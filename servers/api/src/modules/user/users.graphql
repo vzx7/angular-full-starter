@@ -11,13 +11,15 @@ type Mutation {
     firstName: String!
     lastName: String!
     email: String!
-    username: String!
+    login: String!
     password: String!
   ): Token!
 
   createUser(createUserInput: CreateUserInput): User!
 
-  updateUser(updateUserInput: UpdateUseInput): User!
+  updateUser(updateUserInput: UpdateUserInput): User!
+
+  deleteUsers(ids: [ID!]): Boolean
 
   deleteUser(id: ID!): Boolean
 }
@@ -30,26 +32,22 @@ type User {
   id: ID!
   firstName: String!
   lastName: String!
-  username: String
+  login: String
   email: String!
-  role: Role!
-  createdAt: String!
-  updatedAt: String!
 }
 
 input CreateUserInput {
   firstName: String!
   lastName: String!
   email: String!
-  username: String!
-  roleName: String
+  login: String!
+  password: String!
 }
 
-input UpdateUseInput {
+input UpdateUserInput {
   id: ID!
   firstName: String!
   lastName: String!
   email: String!
-  username: String!
-  roleName: String!
+  login: String!
 }

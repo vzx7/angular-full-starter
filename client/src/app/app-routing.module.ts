@@ -7,7 +7,7 @@ import { ErrorsModule } from './core/error/errors.module';
 const appRoutes: Routes = [
   { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   { path: 'auth', loadChildren: './modules/auth/auth.module#AuthModule' },
-  { path: 'account', loadChildren: './modules/account/account.module#AccountModule' },
+  { path: 'users', loadChildren: './modules/users/users.module#UsersModule' },
   { path: 'questions', loadChildren: './modules/question/question.module#QuestionModule' },
   { path: '**', redirectTo: '/' }
 ];

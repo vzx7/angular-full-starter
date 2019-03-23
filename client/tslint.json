@@ -48,10 +48,6 @@
       true,
       120
     ],
-    "interface-name": [
-      true,
-      "never-prefix"
-    ],
     "max-file-line-count": [
       true,
       400
@@ -189,6 +185,10 @@
         "static-method-regex": "^[a-z][\\w\\d]+$",
         "function-regex": "^[a-z][\\w\\d]+$"
       }
+    ],
+    "interface-name": [
+      true,
+      "always-prefix"
     ]
   }
 }

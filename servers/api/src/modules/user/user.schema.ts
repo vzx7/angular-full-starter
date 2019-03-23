@@ -1,11 +1,10 @@
 import * as mongoose from 'mongoose';
 
 export const UserSchema = new mongoose.Schema({
-  id: String,
+  _Id: mongoose.Types.ObjectId,
   firstName: String,
   lastName: String,
-  username: String,
+  login: String,
   email: String,
-  token: String,
-  role: String
+  password: String
 });

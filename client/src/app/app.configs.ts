@@ -1,14 +1,9 @@
+import { IAppConfig } from 'base/interfaces/i.app-config';
+
 /**
  * Settings app.
  */
-interface AppConfig {
-  // api
-  api: {
-    worker: string;
-  };
-}
-
-export const appConfig: AppConfig = {
+export const appConfig: IAppConfig = {
   api: {
     worker: 'worker',
   }

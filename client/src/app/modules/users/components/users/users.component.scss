@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    .action__btn {
+        margin: 15px;
+    }
+
+    .mat-column-select {
+        overflow: initial;
+    }
+
+    .title-link {
+        color: rgb(62, 121, 231);
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+  }
+
+  table {
+    width: 100%;
+  }

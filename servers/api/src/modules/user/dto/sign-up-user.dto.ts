@@ -11,7 +11,7 @@ export class SignUpUserDto {
     email: string;
 
     @IsNotEmpty()
-    username: string;
+    login: string;
 
     @Length(7, 100)
     password: string;

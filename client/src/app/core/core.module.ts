@@ -5,12 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SettingsService } from './services/settings/settings.service';
 import { ToastService } from './services/toast/toast.service';
+import { MatSnackBarModule } from '@angular/material';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   exports: [
     HttpClientModule
