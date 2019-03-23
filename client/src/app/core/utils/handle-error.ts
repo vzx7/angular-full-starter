@@ -11,10 +11,10 @@ export const handleError = (err: any): Observable<never> => {
 
     err.graphQLErrors.forEach((e: any) => {
       error = {
-        message: e.extensions.exception.errors[0].message,
-        path: e.extensions.exception.errors[0].path,
-        type: e.extensions.exception.errors[0].type,
-        value: e.extensions.exception.errors[0].value
+        code: e.extensions.code,
+        message: e.message,
+        path: e.path,
+        stacktrace: e.extensions.exception.stacktrace
       };
     });
 

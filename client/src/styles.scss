@@ -21,6 +21,19 @@ body {
   margin-top: 100px;
 }
 
+/* snack-bar rules ***/
+
+.mat-snack-bar-container {
+  &.error {
+    background-color: red;
+    color: black;
+
+    .mat-button {
+      background-color: black;
+    }
+  }
+}
+
 /* Rules for sizing the icon. */
 
 .material-icons {

@@ -57,7 +57,6 @@ mutation updateUser(
   $lastName: String!
   $email: String!
   $login: String!
-  $roleName: String!
 ) {
   updateUser(
     updateUserInput: {
@@ -66,7 +65,6 @@ mutation updateUser(
       lastName: $lastName
       email: $email
       login: $login
-      roleName: $roleName
     }
   ) {
     id
@@ -81,5 +79,11 @@ mutation updateUser(
 export const deleteUser = gql`
   mutation deleteUser($id: ID!) {
     deleteUser(id: $id)
+  }
+`;
+
+export const deleteUsers = gql`
+  mutation deleteUsers($ids: [ID!]) {
+    deleteUsers(ids: $ids)
   }
 `;

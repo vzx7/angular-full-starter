@@ -19,6 +19,8 @@ type Mutation {
 
   updateUser(updateUserInput: UpdateUserInput): User!
 
+  deleteUsers(ids: [ID!]): Boolean
+
   deleteUser(id: ID!): Boolean
 }
 
@@ -32,9 +34,6 @@ type User {
   lastName: String!
   login: String
   email: String!
-  role: Role!
-  createdAt: String!
-  updatedAt: String!
 }
 
 input CreateUserInput {

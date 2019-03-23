@@ -1,14 +1,16 @@
-import { FormService } from 'modules/shared/services/form/form.service';
+import { ToastService } from 'core/services/toast/toast.service';
+import { IUser } from 'modules/users/interfaces/i.user';
+import { User } from 'modules/users/models/user.model';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { UsersService } from '../../services/users.service';
-import { User } from 'modules/users/models/user.model';
-import { IUser } from 'modules/users/interfaces/i.user';
 
+/**
+ * Component for editing user
+ */
 @Component({
   selector: 'app-edit-account',
   templateUrl: './edit-account.component.html',
@@ -21,11 +23,6 @@ export class EditAccountComponent implements OnInit {
   @ViewChild('form') public form: NgForm;
 
   /**
-   * Repeat password
-   */
-  @ViewChild('repeatPasswd') public repeatPasswd: string;
-
-  /**
    * Displaying the content loading process.
    */
   public isLoading: boolean;
@@ -36,39 +33,26 @@ export class EditAccountComponent implements OnInit {
   public user: User;
 
   /**
-   * Is true password
-   */
-  public isTruePassword: boolean;
-
-  /**
-   * Is the password repeated correctly?
-   */
-  public isRepeatPassword: boolean;
-
-  /**
    * constructor
    * @param usersService usersService
-   * @param fb Form Builder
-   * @param formService Form Service
+   * @param toast ToastService
    * @param router Router
-   * @param snackBar Snack-bar
+   * @param route ActivatedRoute
    */
   constructor(
     private readonly usersService: UsersService,
-    private readonly fb: FormBuilder,
-    private readonly formService: FormService,
+    private readonly toast: ToastService,
     private readonly router: Router,
-    private readonly snackBar: MatSnackBar
+    private readonly route: ActivatedRoute
   ) {
-    this.user = new User();
+    this.usersService.getUser(this.route.snapshot.paramMap.get('id'))
+      .subscribe((user) => this.user = user);
   }
 
   /**
    * Component initialization hook.
    */
-  public ngOnInit() {
-    this.getUser();
-  }
+  public ngOnInit() { }
 
   /**
    * Save
@@ -76,39 +60,12 @@ export class EditAccountComponent implements OnInit {
   public onSave() {
     if (this.form.valid) {
       this.isLoading = true;
-      this.usersService.createUser(this.user)
+      this.usersService.updateUser(this.user)
         .subscribe((user: IUser) => {
-          this.openSnackBar('Congratulations!', `User ${user.firstName} saved successfully!`);
-          this.isLoading = false;
+          this.toast.openSnackBar(`${user.firstName} saved successfully!`);
+          this.router.navigate(['/users']);
         });
 
     }
-  }
-
-  /**
-   * Receiving user data.
-   */
-  public getUser() {
-    /*     this.accountService.getUser('1', () => {}).subscribe((user) => {
-          this.form.patchValue(user);
-          this.user = user;
-        }); */
-  }
-
-  public testPassword(password: string): boolean {
-    console.log(this.user.password === password);
-
-    return this.user.password === password;
-  }
-
-  /**
-   * Action Notification.
-   * @param message Message
-   * @param action Action
-   */
-  private openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 3000,
-    });
   }
 }

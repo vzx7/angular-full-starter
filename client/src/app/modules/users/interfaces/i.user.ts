@@ -29,5 +29,5 @@ export interface IUser {
   /**
    * Password
    */
-  password: string;
+  password?: string;
 }

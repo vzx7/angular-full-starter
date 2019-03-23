@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-    MatButtonModule, MatCardModule, MatFormFieldModule, MatGridListModule, MatInputModule,
-    MatSnackBarModule, MatTableModule, MatTabsModule
+    MatBottomSheetModule, MatButtonModule, MatCardModule, MatCheckboxModule, MatFormFieldModule,
+    MatGridListModule, MatInputModule, MatListModule, MatSnackBarModule, MatTableModule, MatTabsModule
 } from '@angular/material';
 
 import { AccountPasswordComponent } from './components/account-password/account-password.component';
@@ -36,8 +36,10 @@ import { UsersRoutingModule } from './users-routing.module';
     MatCardModule,
     MatTableModule,
     MatTabsModule,
-    FormsModule,
+    MatCheckboxModule,
     MatSnackBarModule,
+    MatBottomSheetModule,
+    FormsModule,
     ReactiveFormsModule,
     MatGridListModule
   ],

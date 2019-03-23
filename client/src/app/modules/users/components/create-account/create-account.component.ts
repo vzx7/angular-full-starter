@@ -1,13 +1,11 @@
-import { FormService } from 'modules/shared/services/form/form.service';
+import { ToastService } from 'core/services/toast/toast.service';
+import { IUser } from 'modules/users/interfaces/i.user';
+import { User } from 'modules/users/models/user.model';
 
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm } from '@angular/forms';
-import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 import { UsersService } from '../../services/users.service';
-import { User } from 'modules/users/models/user.model';
-import { IUser } from 'modules/users/interfaces/i.user';
 
 /**
  * Component of the personal account.
@@ -37,17 +35,11 @@ export class CreateAccountComponent implements OnInit {
   /**
    * constructor
    * @param usersService usersService
-   * @param fb Form Builder
-   * @param formService Form Service
-   * @param router Router
-   * @param snackBar Snack-bar
+   * @param toast ToastService
    */
   constructor(
     private readonly usersService: UsersService,
-    private readonly fb: FormBuilder,
-    private readonly formService: FormService,
-    private readonly router: Router,
-    private readonly snackBar: MatSnackBar
+    private readonly toast: ToastService
   ) {
     this.user = new User();
   }
@@ -65,21 +57,10 @@ export class CreateAccountComponent implements OnInit {
       this.isLoading = true;
       this.usersService.createUser(this.user)
         .subscribe((user: IUser) => {
-          this.openSnackBar('Congratulations!', `User ${user.firstName} saved successfully!`);
+          this.toast.openSnackBar(`User ${user.firstName} saved successfully!`);
           this.isLoading = false;
+          this.form.resetForm();
         });
-
     }
-  }
-
-  /**
-   * Action Notification.
-   * @param message Message
-   * @param action Action
-   */
-  private openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action, {
-      duration: 3000,
-    });
   }
 }

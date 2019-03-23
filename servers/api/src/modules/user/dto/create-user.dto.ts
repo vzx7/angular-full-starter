@@ -7,7 +7,7 @@ import { BaseUserDto } from './base-user.dto';
  */
 @InputType()
 export class CreateUserDto extends BaseUserDto {
- @Field()
+  @Field()
   @IsNotEmpty()
   password: string;
 }

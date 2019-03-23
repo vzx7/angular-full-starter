@@ -1,7 +1,7 @@
 <app-head></app-head>
 <div class="container">
     <h1 class="container__title">Create User</h1>
-    <form #form="ngForm" class="form-account" (ngSubmit)="onSave()">
+    <form #form="ngForm" class="form-account" (ngSubmit)="onSave()" novalidate>
         <mat-form-field class="account-full-width">
             <input matInput type="text" placeholder="Name" name="firstName" [(ngModel)]="user.firstName" required
                 #firstName="ngModel" />

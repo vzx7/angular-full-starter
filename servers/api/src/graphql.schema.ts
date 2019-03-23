@@ -30,6 +30,8 @@ export abstract class IMutation {
 
     abstract updateUser(updateUserInput?: UpdateUserInput): User | Promise<User>;
 
+    abstract deleteUsers(ids: string[]): boolean | Promise<boolean>;
+
     abstract deleteUser(id: string): boolean | Promise<boolean>;
 }
 
@@ -64,7 +66,4 @@ export class User {
     lastName: string;
     login?: string;
     email: string;
-    role: Role;
-    createdAt: string;
-    updatedAt: string;
 }

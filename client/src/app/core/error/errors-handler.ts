@@ -49,6 +49,6 @@ export class ErrorsHandler implements ErrorHandler {
     if (!environment.production) {
       console.error(toConsole);
     }
-    toastService.showError(toUser);
+    toastService.openSnackBar(toUser);
   }
 }

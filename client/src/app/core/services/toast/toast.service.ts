@@ -1,60 +1,37 @@
 import { Injectable } from '@angular/core';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material';
 
 /**
  * Service for displaying notifications
  */
 @Injectable()
 export class ToastService {
-
-constructor( ) { }
   /**
-   * Displays errors.
-   * @param message Message to display.
-   * @param sticky Close message on click.
+   * Default congig
    */
-  public showError(message: string, sticky?: boolean): void {
-    this.toastHandler('error-toast', message);
+  public config: MatSnackBarConfig;
+
+  /**
+   * Default action
+   */
+  public action: string;
+
+  constructor(
+    private readonly snackBar: MatSnackBar
+  ) {
+    this.config = {
+      duration: 3000,
+      panelClass: 'success'
+    };
+    this.action = 'Success';
   }
-
   /**
-   * Displays info.
-   * @param message Message to display.
-   * @param sticky Close message on click.
+   * Action Notification.
+   * @param message Message
+   * @param action Action
+   * @param config MatSnackBarConfig
    */
-  public showInfo(message: string, sticky?: boolean): void {
-    this.toastHandler('info-toast', message);
-  }
-
-  /**
-   * Displays success.
-   * @param message Message to display.
-   * @param sticky Close message on click.
-   */
-  public showSuccess(message: string, sticky?: boolean): void {
-    this.toastHandler('success-toast', message);
-  }
-
-  /**
-   * Displays alerts.
-   * @param message Message to display.
-   * @param sticky Close message on click.
-   */
-  public showWarning(message: string, sticky?: boolean): void {
-    this.toastHandler('warning-toast', message);
-  }
-
-  /**
-   * Method to display messages.
-   * @param  id Item ID in DOM.
-   * @param message Message to display.
-   */
-  private toastHandler(id: string, message: string): void {
-    const toast = document.getElementById(id);
-    toast.className = 'show';
-    toast.textContent = message;
-
-    const duration = 5000;
-    setTimeout(() => toast.className = toast.className === 'show' ? 'hide' : '', duration);
-    toast.onclick = () => toast.className = 'hide';
+  public openSnackBar(message: string, action: string = this.action, config: MatSnackBarConfig = this.config) {
+    this.snackBar.open(message, action, config);
   }
 }
