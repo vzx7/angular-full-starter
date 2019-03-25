@@ -1,3 +1,5 @@
+import { FilesModule } from 'modules/files/files.module';
+import { UsersModule } from 'modules/users/users.module';
 import { join } from 'path';
 
 import { Module } from '@nestjs/common';
@@ -6,7 +8,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { AppController } from './app.controller';
 import { ConfigModule } from './modules/config/config.module';
 import { RolesModule } from './modules/roles/roles.module';
-import { UsersModule } from './modules/user/users.module';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { UsersModule } from './modules/user/users.module';
       },
     }),
     UsersModule,
-    RolesModule
+    RolesModule,
+    FilesModule
   ],
   controllers: [
     AppController

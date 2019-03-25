@@ -3,16 +3,16 @@ import { Model } from 'mongoose';
 import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
 
 import { JwtPayload } from '../../auth/models/jwt-payload.interface';
+import { CreateUserDto } from '../dto/create-user.dto';
+import { SignUpUserDto } from '../dto/sign-up-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { UserDto } from '../dto/user.dto';
-import { User } from '../models/user.interface';
-import { SignUpUserDto } from '../dto/sign-up-user.dto';
-import { CreateUserDto } from '../dto/create-user.dto';
+import { IUser } from '../interfaces/i.user.interface';
 
 @Injectable()
 export class UsersService {
 
-  constructor(@Inject('UserModelToken') private readonly userModel: Model<User>) { }
+  constructor(@Inject('UserModelToken') private readonly userModel: Model<IUser>) { }
 
   /**
    * Get All Users
@@ -86,7 +86,7 @@ export class UsersService {
     return '';
   }
 
-  async findOneByToken(token: string): Promise<User> {
+  async findOneByToken(token: string): Promise<IUser> {
 
     return await this.userModel.findOne({ token }).exec();
   }

@@ -23,6 +23,10 @@ export class File {
 }
 
 export abstract class IMutation {
+    abstract singleUpload(file: Upload): File | Promise<File>;
+
+    abstract multipleUpload(files: Upload[]): File[] | Promise<File[]>;
+
     abstract createRole(name: string): Role | Promise<Role>;
 
     abstract updateRole(id: string, name: string): Role | Promise<Role>;
@@ -40,10 +44,6 @@ export abstract class IMutation {
     abstract deleteUsers(ids: string[]): boolean | Promise<boolean>;
 
     abstract deleteUser(id: string): boolean | Promise<boolean>;
-
-    abstract singleUpload(file: Upload): File | Promise<File>;
-
-    abstract multipleUpload(files: Upload[]): File[] | Promise<File[]>;
 }
 
 export abstract class IQuery {
@@ -56,8 +56,6 @@ export abstract class IQuery {
     abstract user(id: string): User | Promise<User>;
 
     abstract me(): User | Promise<User>;
-
-    abstract uploads(): File[] | Promise<File[]>;
 
     abstract temp__(): boolean | Promise<boolean>;
 }

@@ -2,7 +2,6 @@ type Query {
   users: [User!]
   user(id: ID!): User
   me: User
-  uploads: [File]
 }
 
 type Mutation {
@@ -23,10 +22,6 @@ type Mutation {
   deleteUsers(ids: [ID!]): Boolean
 
   deleteUser(id: ID!): Boolean
-
-  singleUpload(file: Upload!): File!
-
-  multipleUpload(files: [Upload!]!): [File!]!
 }
 
 type Token {
@@ -39,13 +34,6 @@ type User {
   lastName: String!
   login: String
   email: String!
-}
-
-type File {
-  id: ID!
-  path: String!
-  filename: String!
-  mimetype: String!
 }
 
 input CreateUserInput {
@@ -63,5 +51,3 @@ input UpdateUserInput {
   email: String!
   login: String!
 }
-
-scalar Upload
