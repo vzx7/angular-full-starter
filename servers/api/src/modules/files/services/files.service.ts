@@ -1,11 +1,12 @@
 import { Model } from 'mongoose';
-import { logger } from 'utils/utils';
+import { logger } from '../../../utils/utils';
 
 import { Inject, Injectable } from '@nestjs/common';
 
 import { IFile } from '../interfaces/i.file';
 import { IFileDb } from '../interfaces/i.file-db';
 import { IFileStream } from '../interfaces/i.file-stream';
+import { FileDto } from '../dto/file.dto';
 
 // tslint:disable-next-line: no-var-requires
 const shortid = require('shortid');
@@ -26,6 +27,10 @@ export class FilesService {
    * @param fileModel mongoose model
    */
   constructor(@Inject('FileModelToken') private readonly fileModel: Model<IFileDb>) { }
+
+  public async queryAll(): Promise<FileDto[]> {
+    return await this.fileModel.find();
+  }
 
   /**
    * Upload file
@@ -67,8 +72,8 @@ export class FilesService {
     try {
       const { filename, mimetype, encoding, createReadStream }: IFileStream = await file;
       const stream = createReadStream();
-      const { id, filepath } = await this.storeFS(stream, filename);
-      return this.storeDB({ id, filepath, mimetype, encoding, filename });
+      const { fileId, filepath } = await this.storeFS(stream, filename);
+      return this.storeDB({ fileId, filepath, mimetype, encoding, filename });
     } catch (err) {
       logger.error(err);
       throw new Error(err);
@@ -80,16 +85,8 @@ export class FilesService {
    * @param file IFile
    * @returns IFile
    */
-  private storeDB(file: IFile): IFile {
-    new this.fileModel({
-      fileId: file.id,
-      filename: file.filename,
-      mimetype: file.mimetype,
-      encoding: file.mimetype,
-      filepath: file.filepath
-    }).save();
-
-    return file;
+  private storeDB(file: IFile): Promise<IFileDb> {
+    return new this.fileModel(file).save();
   }
 
   /**
@@ -98,9 +95,9 @@ export class FilesService {
    * @param filename
    * @returns Promise<{ fileId: string; filepath: string }>
    */
-  private storeFS(stream: any, filename: string): Promise<{ id: string; filepath: string }> {
-    const id: string = shortid.generate();
-    const filepath: string = `${this.dir}/${id}-${filename}`;
+  private storeFS(stream: any, filename: string): Promise<{ fileId: string; filepath: string }> {
+    const fileId: string = shortid.generate();
+    const filepath: string = `${this.dir}/${fileId}-${filename}`;
     return new Promise((resolve, reject) => {
       stream.on('error', err => {
         if (stream.truncated) {
@@ -113,7 +110,7 @@ export class FilesService {
       stream
         .pipe(fs.createWriteStream(filepath))
         .on('error', (err) => reject(err))
-        .on('finish', () => resolve({ id, filepath }));
+        .on('finish', () => resolve({ fileId, filepath }));
     });
   }
 }

@@ -2,6 +2,7 @@ scalar Upload
 
 type File {
   id: ID!
+  fileId: String!
   path: String!
   filename: String!
   mimetype: String!
@@ -12,4 +13,8 @@ type Mutation {
   singleUpload(file: Upload!): File!
 
   multipleUpload(files: [Upload!]!): [File!]!
+}
+
+type Query {
+  uploads: [File!]
 }

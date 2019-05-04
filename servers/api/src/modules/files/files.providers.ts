@@ -1,5 +1,5 @@
 import { Connection } from 'mongoose';
-import { FileSchema } from 'modules/database/schemas/file.shema';
+import { FileSchema } from '../../modules/database/schemas/file.shema';
 
 /**
  * Provider for files

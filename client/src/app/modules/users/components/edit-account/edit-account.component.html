@@ -1,10 +1,10 @@
 <app-head></app-head>
 <div class="container">
     <mat-card class="card-foto">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+        <img mat-card-image [src]="fileName"
             alt="Photo of a Shiba Inu" />
         <mat-card-actions class="card-button">
-            <input (change)="onChangePhoto($event)" class="ng-hide" id="input-file-id" type="file" #fileInput />
+            <input (change)="onChangePhoto($event)" class="ng-hide" id="input-file-id" type="file" #fileInput accept="image/*" />
             <button (click)="fileInput.click()" mat-raised-button color="primary">Change photo</button>
         </mat-card-actions>
     </mat-card>

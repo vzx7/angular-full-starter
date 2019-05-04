@@ -1,13 +1,12 @@
 import { Model } from 'mongoose';
 
-import { HttpException, HttpStatus, Inject, Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 
-import { JwtPayload } from '../../auth/models/jwt-payload.interface';
 import { CreateUserDto } from '../dto/create-user.dto';
-import { SignUpUserDto } from '../dto/sign-up-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 import { UserDto } from '../dto/user.dto';
-import { IUser } from '../interfaces/i.user.interface';
+import { IUser } from '../interfaces/i.user';
+import { UpdateUserPhotoDto } from '../dto/update-user-photo.dto';
 
 @Injectable()
 export class UsersService {
@@ -47,7 +46,29 @@ export class UsersService {
    * @param user User data
    */
   async updateUser(user: UpdateUserDto): Promise<UserDto> {
-    return this.userModel.findOneAndUpdate({_id: user.id}, user);
+    return this.userModel.findOneAndUpdate({ _id: user.id }, user);
+  }
+
+  /**
+   * Update User
+   * @param userPhoto User photo data
+   * @return Promise<UserDto>
+   */
+  async updateUserPhoto(userPhoto: UpdateUserPhotoDto): Promise<UserDto> {
+    return await this.userModel
+      .findOneAndUpdate(
+        { _id: userPhoto.userId },
+        {
+          $set: {
+            photo: {
+              fileId: userPhoto.fileId,
+              fileName: userPhoto.fileName
+            }
+          }
+        },
+        (err) => {
+          console.log(err);
+        });
   }
 
   /**

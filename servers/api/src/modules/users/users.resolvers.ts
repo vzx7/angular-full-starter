@@ -8,26 +8,27 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 import { CreateUserDto } from './dto/create-user.dto';
+import { UpdateUserPhotoDto } from './dto/update-user-photo.dto';
 
 @Resolver('User')
 export class UsersResolvers {
-  constructor(private readonly usersService: UsersService) {}
+  constructor(private readonly usersService: UsersService) { }
 
   // TODO pagination cursor instead of page???
   @Query('users')
-/*   @Roles('ADMIN')
-  @UseGuards(new AuthGuard()) */
+  /*   @Roles('ADMIN')
+    @UseGuards(new AuthGuard()) */
   async getUsers(
-/*     @Args('page') page: number,
-    @Args('limit') limit: number,
-    @Args('newest') newest: boolean, */
+    /*     @Args('page') page: number,
+        @Args('limit') limit: number,
+        @Args('newest') newest: boolean, */
   ): Promise<UserDto[]> {
     return await this.usersService.findAll();
   }
 
   @Query('user')
   @Roles('ADMIN', 'USER')
-/*   @UseGuards(new AuthGuard()) */
+  /*   @UseGuards(new AuthGuard()) */
   async findOneById(@Args('id') id: string): Promise<UserDto> {
     return await this.usersService.findUserById(id);
   }
@@ -45,12 +46,19 @@ export class UsersResolvers {
   }
 
   @Mutation('updateUser')
-/*   @Roles('ADMIN')
-  @UseGuards(new AuthGuard()) */
+  /*   @Roles('ADMIN')
+    @UseGuards(new AuthGuard()) */
   async updateUser(
     @Args('updateUserInput') args: UpdateUserDto,
   ): Promise<UserDto> {
     return await this.usersService.updateUser(args);
+  }
+
+  @Mutation('updateUserPhoto')
+  async updateUserPhoto(
+    @Args('updateUserPhotoInput') args: UpdateUserPhotoDto,
+  ): Promise<UserDto> {
+    return await this.usersService.updateUserPhoto(args);
   }
 
   @Mutation('deleteUser')

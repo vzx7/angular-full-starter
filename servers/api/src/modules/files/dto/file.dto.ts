@@ -1,4 +1,6 @@
-export interface IFile {
+import { IFile } from '../interfaces/i.file';
+
+export class FileDto implements IFile {
   id?: string;
   fileId: string;
   filepath: string;

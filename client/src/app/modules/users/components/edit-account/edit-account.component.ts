@@ -7,6 +7,8 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { UsersService } from '../../services/users.service';
+import { FileUploadService } from 'core/services/file-upload/file-upload.service';
+import { environment } from '../../../../../environments/environment';
 
 /**
  * Component for editing user
@@ -38,20 +40,39 @@ export class EditAccountComponent implements OnInit {
   public user: User;
 
   /**
+   * File path
+   */
+  public fileName: string;
+
+  /**
+   * Host
+   */
+  public host: string;
+
+  /**
    * constructor
    * @param usersService usersService
+   * @param fileUploadService FileUploadService
    * @param toast ToastService
    * @param router Router
    * @param route ActivatedRoute
    */
   constructor(
     private readonly usersService: UsersService,
+    private readonly fileUploadService: FileUploadService,
     private readonly toast: ToastService,
     private readonly router: Router,
     private readonly route: ActivatedRoute
   ) {
+    this.host = `${environment.PROTOCOL + environment.HOST}:${environment.PORT}`;
+    this.fileName = 'https://material.angular.io/assets/img/examples/shiba1.jpg';
     this.usersService.getUser(this.route.snapshot.paramMap.get('id'))
-      .subscribe((user) => this.user = user);
+      .subscribe((user) => {
+        this.user = user;
+        if (this.user.photo.fileName) {
+          this.fileName = `${this.host}/files/images/${this.user.photo.fileName}`;
+        }
+      });
   }
 
   /**
@@ -74,10 +95,22 @@ export class EditAccountComponent implements OnInit {
     }
   }
 
+  /**
+   * Update userPhoto.
+   * @param event File event.
+   */
   public onChangePhoto(event: any): void {
     const { files, validity } = event.target;
     if (validity.valid) {
-      this.usersService.savePhoto(files).subscribe();
+      this.fileUploadService.upload(files[0]).subscribe((imageData) => {
+        const fileName = `${imageData.fileId}-${imageData.filename}`;
+        this.fileName = `${this.host}/files/images/${fileName}`;
+        this.usersService.updateUserPhoto({
+          userId: this.user.id,
+          fileId: imageData.id,
+          fileName
+        }).subscribe();
+      });
     }
   }
 }

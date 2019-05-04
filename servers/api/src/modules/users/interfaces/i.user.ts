@@ -1,4 +1,5 @@
 import { Document } from 'mongoose';
+import { IUserPhoto } from './i.user-photo';
 
 export interface IUser extends Document {
   readonly id: string;
@@ -7,4 +8,5 @@ export interface IUser extends Document {
   readonly email: string;
   readonly login: string;
   readonly password?: string;
+  readonly photo?: IUserPhoto;
 }

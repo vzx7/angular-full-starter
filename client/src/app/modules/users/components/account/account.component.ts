@@ -6,7 +6,6 @@ import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
 
 import { UsersService } from '../../services/users.service';
-import { User } from 'modules/users/models/user.model';
 import { IUser } from 'modules/users/interfaces/i.user';
 
 /**
@@ -37,7 +36,7 @@ export class AccountComponent implements OnInit {
   /**
    * User
    */
-  public user: User;
+  public user: IUser;
 
   /**
    * Is true password
@@ -64,40 +63,13 @@ export class AccountComponent implements OnInit {
     private readonly router: Router,
     private readonly snackBar: MatSnackBar
   ) {
-    this.user = new User();
+
   }
 
   /**
    * Component initialization hook.
    */
-  public ngOnInit() {
-    this.getUser();
-  }
-
-  /**
-   * Save
-   */
-  public onSave() {
-    if (this.form.valid) {
-      this.isLoading = true;
-      this.usersService.createUser(this.user)
-        .subscribe((user: IUser) => {
-          this.openSnackBar('Congratulations!', `User ${user.firstName} saved successfully!`);
-          this.isLoading = false;
-        });
-
-    }
-  }
-
-  /**
-   * Receiving user data.
-   */
-  public getUser() {
-    /*     this.accountService.getUser('1', () => {}).subscribe((user) => {
-          this.form.patchValue(user);
-          this.user = user;
-        }); */
-  }
+  public ngOnInit() {  }
 
   public testPassword(password: string): boolean {
     console.log(this.user.password === password);

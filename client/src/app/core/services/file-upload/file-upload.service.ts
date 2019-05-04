@@ -1,46 +1,51 @@
 import { Apollo } from 'apollo-angular';
-import { DataProxy } from 'apollo-cache';
-import { ApolloQueryResult } from 'apollo-client';
-import { FetchResult } from 'apollo-link';
 import { Observable } from 'rxjs';
 
 import { Injectable } from '@angular/core';
 
 import { MULTIPLE_UPLOAD, SINGLE_UPLOAD, UPLOADS } from './upload.gql';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import { handleError } from 'core/utils/handle-error';
+import { IFile } from './interfaces/i.file';
+import { IQueryFiles } from './interfaces/i.query.files';
 
 @Injectable()
 export class FileUploadService {
-  constructor(private readonly apollo: Apollo) {}
+  constructor(private readonly apollo: Apollo) { }
 
-  public upload(files: FileList): Observable<FetchResult> {
-    if (files.length > 1) {
-      const fileArray = Array.from(files);
-
-      return this.multipleUpload(fileArray);
-    }
-
+  /**
+   * Upload one file.
+   * @param file File.
+   * @return Observable<IFile>
+   */
+  public upload(file: File): Observable<IFile> {
     return this.apollo
       .mutate({
         mutation: SINGLE_UPLOAD,
         variables: {
-          file: files[0]
-        },
-        update: (proxy: DataProxy, mutationResult: FetchResult<any>) => {
-          const data: any = proxy.readQuery({ query: UPLOADS });
-          const {
-            data: { singleUpload: newUpload }
-          } = mutationResult;
-          data.uploads.push(newUpload);
-          proxy.writeQuery({ query: UPLOADS, data });
+          file
         }
+        /* Use, if you has data from QueryAll.
+                update: (proxy: DataProxy, mutationResult: FetchResult<any>) => {
+                  const data: any = proxy.readQuery({ query: UPLOADS });
+                  const {
+                    data: { singleUpload: newUpload }
+                  } = mutationResult;
+                  data.uploads.push(newUpload);
+                  proxy.writeQuery({ query: UPLOADS, data });
+                } */
       }).pipe(
-      map((res) => {
-        return res;
-      }));
+        map(({ data }: any) => data.singleUpload),
+        catchError(handleError)
+      );
   }
 
-  public multipleUpload(files: FileList | File[]): Observable<FetchResult> {
+  /**
+   * Upload one file.
+   * @param files FileList.
+   * @return Observable<IFile[]>
+   */
+  public multipleUpload(files: FileList | File[]): Observable<IFile[]> {
     return this.apollo
       .mutate({
         mutation: MULTIPLE_UPLOAD,
@@ -48,21 +53,29 @@ export class FileUploadService {
           text: '123',
           files
         },
-        update: (proxy: DataProxy, mutationResult: FetchResult<any>) => {
-          const data: any = proxy.readQuery({ query: UPLOADS });
-          const {
-            data: { multipleUpload: newUploads }
-          } = mutationResult;
-          data.uploads = data.uploads.concat(newUploads);
-          proxy.writeQuery({ query: UPLOADS, data });
-        }
+        /*  Use, if you has data from QueryAll.
+               update: (proxy: DataProxy, mutationResult: FetchResult<any>) => {
+                  const data: any = proxy.readQuery({ query: UPLOADS });
+                  const {
+                    data: { multipleUpload: newUploads }
+                  } = mutationResult;
+                  data.uploads = data.uploads.concat(newUploads);
+                  proxy.writeQuery({ query: UPLOADS, data });
+                } */
       }).pipe(
-        map((res) => {
-          return res;
-        }));
+        map(({ data }: any) => data.multipleUpload),
+        catchError(handleError)
+      );
   }
 
-  public queryAll(): Observable<ApolloQueryResult<any>> {
-    return this.apollo.watchQuery({ query: UPLOADS }).valueChanges;
+  /**
+   * Get all files.
+   * @return Observable<IFile[]>.
+   */
+  public queryAll(): Observable<IFile[]> {
+    return this.apollo.watchQuery<IQueryFiles>({ query: UPLOADS })
+      .valueChanges.pipe(map((res) => {
+        return res.data.uploads;
+      }));
   }
 }
