@@ -46,7 +46,7 @@ export class ErrorsHandler implements ErrorHandler {
    */
   private showError(toConsole: any, toUser: string): void {
     const toastService = this.injector.get(ToastService);
-    if (!environment.production) {
+    if (!environment.PRODUCTION) {
       console.error(toConsole);
     }
     toastService.openSnackBar(toUser);

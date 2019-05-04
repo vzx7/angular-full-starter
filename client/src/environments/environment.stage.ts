@@ -1,4 +1,9 @@
 export const environment = {
-  production: true,
-  host: `http://${window.location.hostname}:3334/api/`
+  PRODUCTION: true,
+  GITHUB_GRAPHQL_API_ENDPOINT: 'https://api.github.com/graphql',
+  PROTOCOL: 'http://',
+  HOST: window.location.hostname,
+  PORT: 3334,
+  WS_PATH: 'subscriptions',
+  GRAPHQL_PATH: 'graphql'
 };

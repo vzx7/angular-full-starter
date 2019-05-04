@@ -9,7 +9,7 @@ import {
     MatGridListModule, MatInputModule, MatListModule, MatSnackBarModule, MatTableModule, MatTabsModule
 } from '@angular/material';
 
-import { AccountPasswordComponent } from './components/account-password/account-password.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { AccountComponent } from './components/account/account.component';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { EditAccountComponent } from './components/edit-account/edit-account.component';
@@ -20,7 +20,7 @@ import { UsersRoutingModule } from './users-routing.module';
 @NgModule({
   declarations: [
     AccountComponent,
-    AccountPasswordComponent,
+    ChangePasswordComponent,
     CreateAccountComponent,
     EditAccountComponent,
     UsersComponent

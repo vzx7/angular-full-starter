@@ -1,14 +1,15 @@
 <app-head></app-head>
 <div class="container">
     <mat-card class="card-foto">
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba1.jpg"
+        <img mat-card-image [src]="fileName"
             alt="Photo of a Shiba Inu" />
         <mat-card-actions class="card-button">
-            <button mat-raised-button color="primary">Change photo</button>
+            <input (change)="onChangePhoto($event)" class="ng-hide" id="input-file-id" type="file" #fileInput accept="image/*" />
+            <button (click)="fileInput.click()" mat-raised-button color="primary">Change photo</button>
         </mat-card-actions>
     </mat-card>
 
-    <form #form="ngForm" class="form-account" (ngSubmit)="onSave()">
+    <form *ngIf="user" #form="ngForm" class="form-account" (ngSubmit)="onSave()">
         <mat-form-field class="account-full-width">
             <input matInput type="text" placeholder="Name" name="firstName" [(ngModel)]="user.firstName" required
                 #firstName="ngModel" />
@@ -47,5 +48,5 @@
             </button>
         </mat-card-actions>
     </form>
-<!--   WIP  <app-account-password></app-account-password> -->
+<!--   WIP  <app-change-password></app-change-password> -->
 </div>

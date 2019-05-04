@@ -10,11 +10,11 @@ import { IPassword } from '../interfaces/i.password';
 import { IQueryUser } from '../interfaces/i.query-user';
 import { IQueryUsers } from '../interfaces/i.query-users';
 import { IUser } from '../interfaces/i.user';
-import { User } from '../models/user.model';
 import accountConfig from '../users.configs';
 import {
-    createUser, deleteUser, deleteUsers, queryUser, queryUsers, updateUser
+  createUser, deleteUser, deleteUsers, queryUser, queryUsers, updateUser, updateUserPhoto
 } from '../users.gql.constants';
+import { IImageData } from '../interfaces/i.image-data';
 
 /**
  * Service for users.
@@ -26,10 +26,11 @@ export class UsersService {
    * Constructor
    * @param requestService requestService
    * @param apollo apollo-angular
+   * @param fileUploadService FileUploadService
    */
   constructor(
     private readonly requestService: RequestService,
-    private readonly apollo: Apollo
+    private readonly apollo: Apollo,
   ) { }
 
   /**
@@ -73,7 +74,6 @@ export class UsersService {
           ...user
         },
         refetchQueries: [
-          { query: queryUser},
           { query: queryUsers }
         ]
       })
@@ -164,7 +164,26 @@ export class UsersService {
    * @param complete Complete function
    * @return Password
    */
-  public changePassword(password: IPassword, user: User, complete: Function): Observable<User> {
-    return this.requestService.put(`${accountConfig.api.updatePassword}/${user._id}`, password, complete);
+  public changePassword(password: IPassword, user: IUser, complete: Function): Observable<IUser> {
+    return this.requestService.put(`${accountConfig.api.updatePassword}/${user.id}`, password, complete);
+  }
+
+  /**
+   * Update Photo of the User.
+   * @param imageData IImageData.
+   * @return any.
+   */
+  public updateUserPhoto(imageData: IImageData) {
+    return this.apollo
+      .mutate({
+        mutation: updateUserPhoto,
+        variables: {
+          ...imageData
+        }
+      })
+      .pipe(
+        map(({ data }: any) => data.updateUserPhoto),
+        catchError(handleError)
+      );
   }
 }

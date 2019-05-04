@@ -1,0 +1,68 @@
+type Query {
+  users: [User!]
+  user(id: ID!): User
+  me: User
+}
+
+type Mutation {
+  signIn(login: String!, password: String!): Token!
+
+  signUp(
+    firstName: String!
+    lastName: String!
+    email: String!
+    login: String!
+    password: String!
+  ): Token!
+
+  createUser(createUserInput: CreateUserInput): User!
+
+  updateUser(updateUserInput: UpdateUserInput): User!
+
+  updateUserPhoto(updateUserPhotoInput: UpdateUserPhotoInput): User!
+
+  deleteUsers(ids: [ID!]): Boolean
+
+  deleteUser(id: ID!): Boolean
+}
+
+type Token {
+  token: String!
+}
+
+type UserPhoto {
+  id: ID!,
+  fileId: String,
+  fileName: String
+}
+
+type User {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  login: String
+  email: String!
+  photo: UserPhoto
+}
+
+input CreateUserInput {
+  firstName: String!
+  lastName: String!
+  email: String!
+  login: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  login: String!
+}
+
+input UpdateUserPhotoInput {
+  userId: ID!
+  fileId: ID!
+  fileName: String!
+}

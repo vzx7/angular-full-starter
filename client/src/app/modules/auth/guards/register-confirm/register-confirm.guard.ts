@@ -23,7 +23,7 @@ export class RegisterConfirmGuard implements CanActivate {
    * @return booleanan
    */
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    if (route.queryParams.code && route.queryParams.userid) {
+/*     if (route.queryParams.code && route.queryParams.userid) {
       // This construction was written due to Uncaught Promise error.
       return Observable.create((observer) => {
         this.authService.confirmEmail(route.queryParams.code, route.queryParams.userid)
@@ -40,6 +40,8 @@ export class RegisterConfirmGuard implements CanActivate {
       this.router.navigate(['/']);
 
       return false;
-    }
+    } */
+
+    return true;
   }
 }

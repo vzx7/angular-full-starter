@@ -21,6 +21,9 @@ query user($id: ID!) {
     lastName
     login
     email
+    photo {
+      fileName
+    }
   }
 }
 `;
@@ -74,6 +77,27 @@ mutation updateUser(
     email
   }
 }
+`;
+
+export const updateUserPhoto = gql`
+  mutation updateUserPhoto(
+      $userId: ID!,
+      $fileId: ID!,
+      $fileName: String!
+    ) {
+    updateUserPhoto(
+        updateUserPhotoInput: {
+        userId: $userId
+        fileId: $fileId
+        fileName: $fileName
+      }
+    )
+    {
+      photo {
+        fileName
+      }
+    }
+  }
 `;
 
 export const deleteUser = gql`

@@ -81,15 +81,15 @@ export class RequestService {
    * @param querryParams Query parameters.
    * @return Observable type.
    */
-  public getBlobRest<T>(url: string, complete?: Function, querryParams?: string): Observable<T | any> {
-    return this.httpClient.get(environment.host + url,
+  public getBlobRest<T>(url: string, complete?: Function, querryParams?: string): /*  Observable<T | any> */ any {
+/*     return this.httpClient.get(environment.host + url,
       { params: new HttpParams({ fromString: querryParams }), headers: this.header, responseType: 'blob' })
       .pipe(map((res: any) => {
         const blob = new Blob([res]);
 
         return blob;
       }))
-      .pipe(finalize(complete()));
+      .pipe(finalize(complete())); */
   }
 
   /**
@@ -128,7 +128,8 @@ export class RequestService {
    * @return host.
    */
   private getHost(isReal: boolean): string {
-    return isReal ? environment.host : environment.host;
+    /* return isReal ? environment.host : environment.host; */
+    return '';
   }
 
 }

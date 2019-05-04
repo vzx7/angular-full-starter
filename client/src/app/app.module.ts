@@ -12,6 +12,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { LoggedGuard } from './core/services/guards/logged/logged.guard';
+import { GraphqlModule } from 'core/modules/graphql/graphql.module';
 
 export function createApollo(httpLink: HttpLink) {
   return {
@@ -30,17 +31,16 @@ export function createApollo(httpLink: HttpLink) {
     AppRoutingModule,
     SharedModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule,
-    ApolloModule,
+    GraphqlModule,
     HttpLinkModule
   ],
   providers: [
     LoggedGuard,
-    {
+/*     {
       provide: APOLLO_OPTIONS,
       useFactory: createApollo,
       deps: [HttpLink],
-    },
+    }, */
   ],
   bootstrap: [
     AppComponent

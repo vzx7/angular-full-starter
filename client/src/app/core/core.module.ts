@@ -6,13 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SettingsService } from './services/settings/settings.service';
 import { ToastService } from './services/toast/toast.service';
 import { MatSnackBarModule } from '@angular/material';
+import { FileUploadService } from './services/file-upload/file-upload.service';
+import { SubscriptionService } from './services/subscription/subscription.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   exports: [
     HttpClientModule
@@ -25,7 +27,9 @@ import { MatSnackBarModule } from '@angular/material';
       deps: [SettingsService],
       multi: true
     },
-    ToastService
+    ToastService,
+    FileUploadService,
+    SubscriptionService
   ],
 })
 export class CoreModule { }
