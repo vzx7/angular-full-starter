@@ -2,13 +2,14 @@ import { UseGuards } from '@nestjs/common';
 import { Args, Mutation, Query, Resolver } from '@nestjs/graphql';
 
 import { Roles } from '../../decorators/roles.decorators';
-import { AuthGuard } from '../auth/guards/auth.guard';
+import { JwtAuthGuard } from '../auth/guards/auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { UserDto } from './dto/user.dto';
 import { UsersService } from './services/users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserPhotoDto } from './dto/update-user-photo.dto';
+import { User as CurrentUser } from '../auth/services/auth/user.decorator';
 
 @Resolver('User')
 export class UsersResolvers {
@@ -16,19 +17,20 @@ export class UsersResolvers {
 
   // TODO pagination cursor instead of page???
   @Query('users')
-  /*   @Roles('ADMIN')
-    @UseGuards(new AuthGuard()) */
-  async getUsers(
+/*     @Roles('ADMIN')
+ */
+ // @UseGuards(new JwtAuthGuard())
+  async getUsers(@CurrentUser() user: any
     /*     @Args('page') page: number,
         @Args('limit') limit: number,
         @Args('newest') newest: boolean, */
   ): Promise<UserDto[]> {
+    console.log(user);
     return await this.usersService.findAll();
   }
 
   @Query('user')
   @Roles('ADMIN', 'USER')
-  /*   @UseGuards(new AuthGuard()) */
   async findOneById(@Args('id') id: string): Promise<UserDto> {
     return await this.usersService.findUserById(id);
   }
@@ -63,7 +65,7 @@ export class UsersResolvers {
 
   @Mutation('deleteUser')
   @Roles('ADMIN')
-  @UseGuards(new AuthGuard())
+  // @UseGuards(new AuthGuard())
   async deleteUser(@Args('id') id: string): Promise<boolean> {
     return await this.usersService.deleteUser(id).then((res) => res.n > 0);
   }

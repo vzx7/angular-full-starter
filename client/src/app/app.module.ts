@@ -14,12 +14,12 @@ import { AppComponent } from './components/app.component';
 import { LoggedGuard } from './core/services/guards/logged/logged.guard';
 import { GraphqlModule } from 'core/modules/graphql/graphql.module';
 
-export function createApollo(httpLink: HttpLink) {
+/* export function createApollo(httpLink: HttpLink) {
   return {
     link: httpLink.create({ uri: 'http://localhost:3333/graphql' }),
     cache: new InMemoryCache(),
   };
-}
+} */
 
 @NgModule({
   declarations: [

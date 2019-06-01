@@ -1,12 +1,20 @@
-
 import { Injectable } from '@nestjs/common';
-import { UsersService } from 'modules/users/services/users.service';
+import * as jwt from 'jsonwebtoken';
+
+import { environment } from 'environments/environment';
+import { JwtPayload } from 'modules/auth/models/jwt-payload.interface';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly usersService: UsersService) { }
+  constructor() {}
 
-  async validateUser(token: string): Promise<any> {
-    return await this.usersService.findOneByToken(token);
+  createToken(jwtPayload: JwtPayload) {
+    return jwt.sign(
+      {
+        ...jwtPayload,
+      },
+      environment.secret,
+      { expiresIn: environment.expiresIn },
+    );
   }
 }
