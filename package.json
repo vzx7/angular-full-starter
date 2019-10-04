@@ -22,7 +22,7 @@
     "server:lint": "cd servers/api && npm run lint",
     "server-api:prod": "cd servers/api && npm run start:prod",
     "server-static:prod": "cd servers/prod-static && npm start",
-    "start:prod": "concurrently --raw \"npm run build:prod:server-api && npm run server-api:prod\" \"npm run build:prod:client && npm run server-static:prod\""
+    "start:prod": "npm run build:prod:client && npm run server-static:prod"
   },
   "husky": {
     "hooks": {
